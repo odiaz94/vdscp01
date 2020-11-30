@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/import/home/vdscp01/work/src/Manager.cpp
+cassert
+-
+Manager.h
+/import/home/vdscp01/work/src/Manager.h
+
+/import/home/vdscp01/work/src/Manager.h
+cassert
+-
+iostream
+-
+list
+-
+vector
+-
+unordered_map
+-
+set
+-
+string
+-
+ManagerInterface.h
+/import/home/vdscp01/work/src/ManagerInterface.h
+
+/import/home/vdscp01/work/src/ManagerInterface.h
+string
+-
+set
+-
+

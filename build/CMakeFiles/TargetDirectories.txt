@@ -1,0 +1,3 @@
+/import/home/vdscp01/work/build/src/CMakeFiles/Manager.dir
+/import/home/vdscp01/work/build/CMakeFiles/VDSProject.dir
+/import/home/vdscp01/work/build/src/test/CMakeFiles/VDSProject_test.dir
