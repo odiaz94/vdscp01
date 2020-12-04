@@ -16,15 +16,30 @@
 
 namespace ClassProject {
 
+    struct node {
+        std::string label;
+        BDD_ID id, high, low, topVar;
+    };
+
     class Manager: ManagerInterface {
+
+    private:
+        std::vector<node> uniqueTable;
 
     public:
 
+        Manager() {
+            struct node t = {"1", 1};
+            struct node f = {"0", 0};
+            uniqueTable.push_back(f);
+            uniqueTable.push_back(t);
+        }
+
         BDD_ID createVar(const std::string &label) override {};
 
-        const BDD_ID &True() override {};
+        const BDD_ID &True() override { return uniqueTable[1].id; };
 
-        const BDD_ID &False() override {};
+        const BDD_ID &False() override { return uniqueTable[0].id; };
 
         bool isConstant(const BDD_ID f) override {};
 
@@ -34,9 +49,9 @@ namespace ClassProject {
 
         BDD_ID ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) override {};
 
-        BDD_ID coFactorTrue(const BDD_ID f, BDD_ID x)override {};
+        BDD_ID coFactorTrue(const BDD_ID f, BDD_ID x) override {};
 
-        BDD_ID coFactorFalse(const BDD_ID f, BDD_ID x)override {};
+        BDD_ID coFactorFalse(const BDD_ID f, BDD_ID x) override {};
 
         BDD_ID coFactorTrue(const BDD_ID f)override {};
 
