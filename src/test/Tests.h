@@ -10,4 +10,9 @@
 
 ClassProject::Manager manager;
 
+TEST(ConstructorTest, ConstsTest) {
+    EXPECT_EQ(manager.True(), 1);
+    EXPECT_EQ(manager.False(), 0);
+}
+
 #endif //VDS_PROJECT_TESTS_H
