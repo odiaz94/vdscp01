@@ -8,6 +8,6 @@
 #include "gtest/gtest.h"
 #include "../Manager.h"
 
+ClassProject::Manager manager;
 
 #endif //VDS_PROJECT_TESTS_H
-

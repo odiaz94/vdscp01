@@ -13,5 +13,5 @@ using namespace ClassProject;
 int main(int argc, char* argv[])
 {
   // Manager manager;
-  std::cout << "nothing";
+  std::cout << "nothing\n";
 }

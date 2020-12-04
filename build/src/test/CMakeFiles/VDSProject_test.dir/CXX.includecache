@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/import/home/vdscp01/work/src/Manager.h
+/home/sergey/vdscp01/src/Manager.h
 cassert
 -
 iostream
@@ -22,21 +22,21 @@ set
 string
 -
 ManagerInterface.h
-/import/home/vdscp01/work/src/ManagerInterface.h
+/home/sergey/vdscp01/src/ManagerInterface.h
 
-/import/home/vdscp01/work/src/ManagerInterface.h
+/home/sergey/vdscp01/src/ManagerInterface.h
 string
 -
 set
 -
 
-/import/home/vdscp01/work/src/test/Tests.h
+/home/sergey/vdscp01/src/test/Tests.h
 gtest/gtest.h
-/import/home/vdscp01/work/src/test/gtest/gtest.h
+/home/sergey/vdscp01/src/test/gtest/gtest.h
 ../Manager.h
-/import/home/vdscp01/work/src/Manager.h
+/home/sergey/vdscp01/src/Manager.h
 
-/import/home/vdscp01/work/src/test/main_test.cpp
+/home/sergey/vdscp01/src/test/main_test.cpp
 Tests.h
-/import/home/vdscp01/work/src/test/Tests.h
+/home/sergey/vdscp01/src/test/Tests.h
 

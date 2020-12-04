@@ -1,1 +1,1 @@
-/usr/bin/c++    -fPIC -std=c++11      CMakeFiles/VDSProject.dir/src/main.cpp.o  -o VDSProject  -L/import/home/vdscp01/work/src  -L/import/home/vdscp01/work/src/test -rdynamic src/libManager.a -Wl,-rpath,/import/home/vdscp01/work/src:/import/home/vdscp01/work/src/test 
+/usr/bin/c++   -fPIC -std=c++11    -rdynamic CMakeFiles/VDSProject.dir/src/main.cpp.o  -o VDSProject   -L/home/sergey/vdscp01/src  -L/home/sergey/vdscp01/src/test  -Wl,-rpath,/home/sergey/vdscp01/src:/home/sergey/vdscp01/src/test src/libManager.a 
