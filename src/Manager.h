@@ -40,6 +40,7 @@ namespace ClassProject {
             struct node f = {"0", 0};
             uniqueTable.push_back(f);
             uniqueTable.push_back(t);
+            id_nxt = 2;
         }
 
         BDD_ID createVar(const std::string &label) override {
