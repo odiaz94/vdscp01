@@ -42,7 +42,11 @@ namespace ClassProject {
             uniqueTable.push_back(t);
         }
 
-        BDD_ID createVar(const std::string &label) override {};
+        BDD_ID createVar(const std::string &label) override {
+            struct node newVar = {label, id_nxt, 1, 0, id_nxt};
+            uniqueTable.push_back(newVar);
+            return id_nxt++;
+        };
 
         const BDD_ID &True() override { return uniqueTable[1].id; };
 
