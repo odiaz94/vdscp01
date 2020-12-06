@@ -62,7 +62,7 @@ namespace ClassProject {
 
         bool isVariable(const BDD_ID x) override {};
 
-        BDD_ID topVar(const BDD_ID f) override {};
+        BDD_ID topVar(const BDD_ID f) override { return uniqueTable[f].topVar; };
 
         BDD_ID ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) override {};
 
