@@ -53,7 +53,12 @@ namespace ClassProject {
 
         const BDD_ID &False() override { return uniqueTable[0].id; };
 
-        bool isConstant(const BDD_ID f) override {};
+        bool isConstant(const BDD_ID f) override {
+           if(f == 1 || f == 0)
+                return true;
+           else
+                return false;
+        };
 
         bool isVariable(const BDD_ID x) override {};
 
