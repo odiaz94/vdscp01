@@ -28,4 +28,8 @@ TEST(MethodsTests, isConstantTest) {
     EXPECT_EQ(false,manager.isConstant(2));
 }
 
+TEST(MethodsTests, topVarTest1) {
+    EXPECT_EQ(manager.topVar(2), 2);
+}
+
 #endif //VDS_PROJECT_TESTS_H
