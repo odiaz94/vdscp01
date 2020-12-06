@@ -22,4 +22,10 @@ TEST(MethodsTests, CreateVarTest) {
     EXPECT_EQ(manager.uniqueTable[manager.uniqueTable.size()-1], newVar);
 }
 
+TEST(MethodsTests, isConstantTest) {
+    EXPECT_EQ(true,manager.isConstant(0));
+    EXPECT_EQ(true,manager.isConstant(1));
+    EXPECT_EQ(false,manager.isConstant(2));
+}
+
 #endif //VDS_PROJECT_TESTS_H
