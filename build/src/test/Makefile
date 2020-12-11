@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sergey/vdscp01
+CMAKE_SOURCE_DIR = "/home/sergey/Study/VDS/Class Project/vdscp01"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sergey/vdscp01/build
+CMAKE_BINARY_DIR = "/home/sergey/Study/VDS/Class Project/vdscp01/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/sergey/vdscp01/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sergey/vdscp01/build/CMakeFiles /home/sergey/vdscp01/build/src/test/CMakeFiles/progress.marks
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergey/vdscp01/build/CMakeFiles 0
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles" "/home/sergey/Study/VDS/Class Project/vdscp01/build/src/test/CMakeFiles/progress.marks"
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/test/clean
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/test/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/test/preinstall
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/test/preinstall
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/sergey/vdscp01/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/test/CMakeFiles/VDSProject_test.dir/rule:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/test/CMakeFiles/VDSProject_test.dir/rule
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/test/CMakeFiles/VDSProject_test.dir/rule
 .PHONY : src/test/CMakeFiles/VDSProject_test.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ VDSProject_test: src/test/CMakeFiles/VDSProject_test.dir/rule
 
 # fast build rule for target.
 VDSProject_test/fast:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/test/CMakeFiles/VDSProject_test.dir/build.make src/test/CMakeFiles/VDSProject_test.dir/build
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/test/CMakeFiles/VDSProject_test.dir/build.make src/test/CMakeFiles/VDSProject_test.dir/build
 .PHONY : VDSProject_test/fast
 
 main_test.o: main_test.cpp.o
@@ -131,7 +131,7 @@ main_test.o: main_test.cpp.o
 
 # target to build an object file
 main_test.cpp.o:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/test/CMakeFiles/VDSProject_test.dir/build.make src/test/CMakeFiles/VDSProject_test.dir/main_test.cpp.o
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/test/CMakeFiles/VDSProject_test.dir/build.make src/test/CMakeFiles/VDSProject_test.dir/main_test.cpp.o
 .PHONY : main_test.cpp.o
 
 main_test.i: main_test.cpp.i
@@ -140,7 +140,7 @@ main_test.i: main_test.cpp.i
 
 # target to preprocess a source file
 main_test.cpp.i:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/test/CMakeFiles/VDSProject_test.dir/build.make src/test/CMakeFiles/VDSProject_test.dir/main_test.cpp.i
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/test/CMakeFiles/VDSProject_test.dir/build.make src/test/CMakeFiles/VDSProject_test.dir/main_test.cpp.i
 .PHONY : main_test.cpp.i
 
 main_test.s: main_test.cpp.s
@@ -149,7 +149,7 @@ main_test.s: main_test.cpp.s
 
 # target to generate assembly for a file
 main_test.cpp.s:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/test/CMakeFiles/VDSProject_test.dir/build.make src/test/CMakeFiles/VDSProject_test.dir/main_test.cpp.s
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/test/CMakeFiles/VDSProject_test.dir/build.make src/test/CMakeFiles/VDSProject_test.dir/main_test.cpp.s
 .PHONY : main_test.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/sergey/vdscp01/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

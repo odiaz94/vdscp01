@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/sergey/vdscp01/src/Manager.cpp
+/home/sergey/Study/VDS/Class Project/vdscp01/src/Manager.cpp
 cassert
 -
 Manager.h
-/home/sergey/vdscp01/src/Manager.h
+/home/sergey/Study/VDS/Class Project/vdscp01/src/Manager.h
 
-/home/sergey/vdscp01/src/Manager.h
+/home/sergey/Study/VDS/Class Project/vdscp01/src/Manager.h
 cassert
 -
 iostream
@@ -28,13 +28,9 @@ set
 string
 -
 ManagerInterface.h
-/home/sergey/vdscp01/src/ManagerInterface.h
+/home/sergey/Study/VDS/Class Project/vdscp01/src/ManagerInterface.h
 
-/home/sergey/vdscp01/src/ManagerInterface.cpp
-ManagerInterface.h
-/home/sergey/vdscp01/src/ManagerInterface.h
-
-/home/sergey/vdscp01/src/ManagerInterface.h
+/home/sergey/Study/VDS/Class Project/vdscp01/src/ManagerInterface.h
 string
 -
 set

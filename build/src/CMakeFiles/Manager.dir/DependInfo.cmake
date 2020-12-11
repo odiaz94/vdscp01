@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/sergey/vdscp01/src/Manager.cpp" "/home/sergey/vdscp01/build/src/CMakeFiles/Manager.dir/Manager.cpp.o"
-  "/home/sergey/vdscp01/src/ManagerInterface.cpp" "/home/sergey/vdscp01/build/src/CMakeFiles/Manager.dir/ManagerInterface.cpp.o"
+  "/home/sergey/Study/VDS/Class Project/vdscp01/src/Manager.cpp" "/home/sergey/Study/VDS/Class Project/vdscp01/build/src/CMakeFiles/Manager.dir/Manager.cpp.o"
+  "/home/sergey/Study/VDS/Class Project/vdscp01/src/ManagerInterface.cpp" "/home/sergey/Study/VDS/Class Project/vdscp01/build/src/CMakeFiles/Manager.dir/ManagerInterface.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

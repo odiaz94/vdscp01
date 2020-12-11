@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sergey/vdscp01
+CMAKE_SOURCE_DIR = "/home/sergey/Study/VDS/Class Project/vdscp01"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sergey/vdscp01/build
+CMAKE_BINARY_DIR = "/home/sergey/Study/VDS/Class Project/vdscp01/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/sergey/vdscp01/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sergey/vdscp01/build/CMakeFiles /home/sergey/vdscp01/build/src/CMakeFiles/progress.marks
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergey/vdscp01/build/CMakeFiles 0
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles" "/home/sergey/Study/VDS/Class Project/vdscp01/build/src/CMakeFiles/progress.marks"
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/sergey/vdscp01/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/Manager.dir/rule:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/Manager.dir/rule
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/Manager.dir/rule
 .PHONY : src/CMakeFiles/Manager.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ Manager: src/CMakeFiles/Manager.dir/rule
 
 # fast build rule for target.
 Manager/fast:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/build
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/build
 .PHONY : Manager/fast
 
 Manager.o: Manager.cpp.o
@@ -131,7 +131,7 @@ Manager.o: Manager.cpp.o
 
 # target to build an object file
 Manager.cpp.o:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/Manager.cpp.o
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/Manager.cpp.o
 .PHONY : Manager.cpp.o
 
 Manager.i: Manager.cpp.i
@@ -140,7 +140,7 @@ Manager.i: Manager.cpp.i
 
 # target to preprocess a source file
 Manager.cpp.i:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/Manager.cpp.i
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/Manager.cpp.i
 .PHONY : Manager.cpp.i
 
 Manager.s: Manager.cpp.s
@@ -149,7 +149,7 @@ Manager.s: Manager.cpp.s
 
 # target to generate assembly for a file
 Manager.cpp.s:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/Manager.cpp.s
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/Manager.cpp.s
 .PHONY : Manager.cpp.s
 
 ManagerInterface.o: ManagerInterface.cpp.o
@@ -158,7 +158,7 @@ ManagerInterface.o: ManagerInterface.cpp.o
 
 # target to build an object file
 ManagerInterface.cpp.o:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/ManagerInterface.cpp.o
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/ManagerInterface.cpp.o
 .PHONY : ManagerInterface.cpp.o
 
 ManagerInterface.i: ManagerInterface.cpp.i
@@ -167,7 +167,7 @@ ManagerInterface.i: ManagerInterface.cpp.i
 
 # target to preprocess a source file
 ManagerInterface.cpp.i:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/ManagerInterface.cpp.i
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/ManagerInterface.cpp.i
 .PHONY : ManagerInterface.cpp.i
 
 ManagerInterface.s: ManagerInterface.cpp.s
@@ -176,7 +176,7 @@ ManagerInterface.s: ManagerInterface.cpp.s
 
 # target to generate assembly for a file
 ManagerInterface.cpp.s:
-	cd /home/sergey/vdscp01/build && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/ManagerInterface.cpp.s
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(MAKE) -f src/CMakeFiles/Manager.dir/build.make src/CMakeFiles/Manager.dir/ManagerInterface.cpp.s
 .PHONY : ManagerInterface.cpp.s
 
 # Help Target
@@ -205,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/sergey/vdscp01/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/sergey/vdscp01/src/test
+# Install script for directory: /home/sergey/Study/VDS/Class Project/vdscp01/src/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

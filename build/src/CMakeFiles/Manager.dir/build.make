@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sergey/vdscp01
+CMAKE_SOURCE_DIR = "/home/sergey/Study/VDS/Class Project/vdscp01"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sergey/vdscp01/build
+CMAKE_BINARY_DIR = "/home/sergey/Study/VDS/Class Project/vdscp01/build"
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/Manager.dir/depend.make
@@ -59,29 +59,29 @@ include src/CMakeFiles/Manager.dir/flags.make
 
 src/CMakeFiles/Manager.dir/Manager.cpp.o: src/CMakeFiles/Manager.dir/flags.make
 src/CMakeFiles/Manager.dir/Manager.cpp.o: ../src/Manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergey/vdscp01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/Manager.dir/Manager.cpp.o"
-	cd /home/sergey/vdscp01/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Manager.dir/Manager.cpp.o -c /home/sergey/vdscp01/src/Manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/Manager.dir/Manager.cpp.o"
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Manager.dir/Manager.cpp.o -c "/home/sergey/Study/VDS/Class Project/vdscp01/src/Manager.cpp"
 
 src/CMakeFiles/Manager.dir/Manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Manager.dir/Manager.cpp.i"
-	cd /home/sergey/vdscp01/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sergey/vdscp01/src/Manager.cpp > CMakeFiles/Manager.dir/Manager.cpp.i
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/sergey/Study/VDS/Class Project/vdscp01/src/Manager.cpp" > CMakeFiles/Manager.dir/Manager.cpp.i
 
 src/CMakeFiles/Manager.dir/Manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Manager.dir/Manager.cpp.s"
-	cd /home/sergey/vdscp01/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sergey/vdscp01/src/Manager.cpp -o CMakeFiles/Manager.dir/Manager.cpp.s
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/sergey/Study/VDS/Class Project/vdscp01/src/Manager.cpp" -o CMakeFiles/Manager.dir/Manager.cpp.s
 
 src/CMakeFiles/Manager.dir/ManagerInterface.cpp.o: src/CMakeFiles/Manager.dir/flags.make
 src/CMakeFiles/Manager.dir/ManagerInterface.cpp.o: ../src/ManagerInterface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergey/vdscp01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/Manager.dir/ManagerInterface.cpp.o"
-	cd /home/sergey/vdscp01/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Manager.dir/ManagerInterface.cpp.o -c /home/sergey/vdscp01/src/ManagerInterface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/Manager.dir/ManagerInterface.cpp.o"
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Manager.dir/ManagerInterface.cpp.o -c "/home/sergey/Study/VDS/Class Project/vdscp01/src/ManagerInterface.cpp"
 
 src/CMakeFiles/Manager.dir/ManagerInterface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Manager.dir/ManagerInterface.cpp.i"
-	cd /home/sergey/vdscp01/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sergey/vdscp01/src/ManagerInterface.cpp > CMakeFiles/Manager.dir/ManagerInterface.cpp.i
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/sergey/Study/VDS/Class Project/vdscp01/src/ManagerInterface.cpp" > CMakeFiles/Manager.dir/ManagerInterface.cpp.i
 
 src/CMakeFiles/Manager.dir/ManagerInterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Manager.dir/ManagerInterface.cpp.s"
-	cd /home/sergey/vdscp01/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sergey/vdscp01/src/ManagerInterface.cpp -o CMakeFiles/Manager.dir/ManagerInterface.cpp.s
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/sergey/Study/VDS/Class Project/vdscp01/src/ManagerInterface.cpp" -o CMakeFiles/Manager.dir/ManagerInterface.cpp.s
 
 # Object files for target Manager
 Manager_OBJECTS = \
@@ -95,9 +95,9 @@ src/libManager.a: src/CMakeFiles/Manager.dir/Manager.cpp.o
 src/libManager.a: src/CMakeFiles/Manager.dir/ManagerInterface.cpp.o
 src/libManager.a: src/CMakeFiles/Manager.dir/build.make
 src/libManager.a: src/CMakeFiles/Manager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sergey/vdscp01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libManager.a"
-	cd /home/sergey/vdscp01/build/src && $(CMAKE_COMMAND) -P CMakeFiles/Manager.dir/cmake_clean_target.cmake
-	cd /home/sergey/vdscp01/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Manager.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libManager.a"
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" && $(CMAKE_COMMAND) -P CMakeFiles/Manager.dir/cmake_clean_target.cmake
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Manager.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/Manager.dir/build: src/libManager.a
@@ -105,10 +105,10 @@ src/CMakeFiles/Manager.dir/build: src/libManager.a
 .PHONY : src/CMakeFiles/Manager.dir/build
 
 src/CMakeFiles/Manager.dir/clean:
-	cd /home/sergey/vdscp01/build/src && $(CMAKE_COMMAND) -P CMakeFiles/Manager.dir/cmake_clean.cmake
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" && $(CMAKE_COMMAND) -P CMakeFiles/Manager.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/Manager.dir/clean
 
 src/CMakeFiles/Manager.dir/depend:
-	cd /home/sergey/vdscp01/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sergey/vdscp01 /home/sergey/vdscp01/src /home/sergey/vdscp01/build /home/sergey/vdscp01/build/src /home/sergey/vdscp01/build/src/CMakeFiles/Manager.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/home/sergey/Study/VDS/Class Project/vdscp01/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/sergey/Study/VDS/Class Project/vdscp01" "/home/sergey/Study/VDS/Class Project/vdscp01/src" "/home/sergey/Study/VDS/Class Project/vdscp01/build" "/home/sergey/Study/VDS/Class Project/vdscp01/build/src" "/home/sergey/Study/VDS/Class Project/vdscp01/build/src/CMakeFiles/Manager.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : src/CMakeFiles/Manager.dir/depend
 

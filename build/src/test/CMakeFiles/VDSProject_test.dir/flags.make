@@ -6,5 +6,5 @@ CXX_FLAGS =  -fPIC -std=c++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sergey/vdscp01/src -I/home/sergey/vdscp01/src/test 
+CXX_INCLUDES = -I"/home/sergey/Study/VDS/Class Project/vdscp01/src" -I"/home/sergey/Study/VDS/Class Project/vdscp01/src/test" 
 
