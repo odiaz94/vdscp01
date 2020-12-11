@@ -32,3 +32,44 @@ bool Manager::isConstant(const BDD_ID f) {
 }
 
 bool Manager::isVariable(const BDD_ID x) {}
+
+BDD_ID Manager::and2(const BDD_ID a, const BDD_ID b)  {
+    if (!isConstant(a)) {
+        if (isConstant(b)) {
+            if (b == 1) {
+                return a;
+            } else {
+                return 0;
+            }
+        }
+        else {
+            BDD_ID topVar_ab;
+            BDD_ID high;
+            BDD_ID low=0;
+            if(topVar(a)<topVar(b)) {
+                topVar_ab = topVar(a);
+                high=b;
+            }
+            else {
+                topVar_ab = topVar(b);
+                high=a;
+            }
+            for(int i=0;i<uniqueTable.size();i++){
+                if(topVar_ab==uniqueTable[i].topVar && high==uniqueTable[i].high && low==uniqueTable[i].low){
+                    return uniqueTable[i].id;
+                }
+            }
+            node r = {"",id_nxt,high,low,topVar_ab};
+            uniqueTable.push_back(r);
+            return id_nxt++;
+        }
+    }
+    else {
+        if (a == 1) {
+            return b;
+        }
+        else {
+            return 0;
+        }
+    }
+}
