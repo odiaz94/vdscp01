@@ -21,11 +21,7 @@ namespace ClassProject {
         BDD_ID id, high, low, topVar;
     };
 
-    bool operator==(const node& left, const node& right) {
-        return (left.label == right.label) and (left.id == right.id) and
-                (left.high == right.high) and (left.low == right.low) and
-                (left.topVar == right.topVar);
-    };
+    bool operator==(const node& left, const node& right);
 
     class Manager: ManagerInterface {
 
@@ -35,32 +31,17 @@ namespace ClassProject {
     public:
         std::vector<node> uniqueTable;
 
-        Manager() {
-            struct node t = {"1", 1};
-            struct node f = {"0", 0};
-            uniqueTable.push_back(f);
-            uniqueTable.push_back(t);
-            id_nxt = 2;
-        }
+        Manager();
 
-        BDD_ID createVar(const std::string &label) override {
-            struct node newVar = {label, id_nxt, 1, 0, id_nxt};
-            uniqueTable.push_back(newVar);
-            return id_nxt++;
-        };
+        BDD_ID createVar(const std::string &label) override;
 
         const BDD_ID &True() override { return uniqueTable[1].id; };
 
         const BDD_ID &False() override { return uniqueTable[0].id; };
 
-        bool isConstant(const BDD_ID f) override {
-           if(f == 1 || f == 0)
-                return true;
-           else
-                return false;
-        };
+        bool isConstant(const BDD_ID f) override;
 
-        bool isVariable(const BDD_ID x) override {};
+        bool isVariable(const BDD_ID x) override;
 
         BDD_ID topVar(const BDD_ID f) override { return uniqueTable[f].topVar; };
 
