@@ -73,3 +73,22 @@ BDD_ID Manager::and2(const BDD_ID a, const BDD_ID b)  {
         }
     }
 }
+
+BDD_ID Manager::or2(const BDD_ID a, const BDD_ID b) {
+    if (a == 1 or b == 1)
+        return 1;
+    if (a == 0)
+        return b;
+    if (b == 0)
+        return a;
+    auto tV = (a < b) ? a : b;
+    BDD_ID high = 1;
+    BDD_ID low = (a < b) ? b : a;
+    for (auto & node : uniqueTable) {
+        if (node.topVar == tV and node.low == low and node.high == high)
+            return node.id;
+    }
+    node newNode = {"", id_nxt, high, low, tV};
+    uniqueTable.push_back(newNode);
+    return id_nxt++;
+}
