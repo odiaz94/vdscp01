@@ -47,6 +47,21 @@ TEST(MethodsTests, and2Test) {
     auto b=manager.createVar("b");
     EXPECT_EQ(manager.and2(a,b),4);
     EXPECT_EQ(manager.and2(b,a),4);
+    EXPECT_EQ(manager.topVar(4), a);
+}
+
+TEST(MethodsTests, or2Test) {
+    ClassProject::Manager manager;
+    EXPECT_EQ(manager.or2(0, 0), 0);
+    EXPECT_EQ(manager.or2(1, 0), 1);
+    EXPECT_EQ(manager.or2(0, 1), 1);
+    auto a = manager.createVar("a");
+    EXPECT_EQ(manager.or2(0, a), a);
+    EXPECT_EQ(manager.or2(a, 0), a);
+    auto b = manager.createVar("b");
+    EXPECT_EQ(manager.or2(a, b), 4);
+    EXPECT_EQ(manager.topVar(4), a);
+    EXPECT_EQ(manager.or2(b, a), 4);
 }
 
 #endif //VDS_PROJECT_TESTS_H
