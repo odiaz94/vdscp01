@@ -107,3 +107,34 @@ BDD_ID Manager::neg(const BDD_ID a) {
     uniqueTable.push_back(newNode);
     return id_nxt++;
 }
+
+BDD_ID Manager::xor2(const BDD_ID a, const BDD_ID b) {
+    if (a == b)
+        return 0;
+    if (a == 0)
+        return b;
+    if (b == 0)
+        return a;
+    if (a == 1 xor b == 1) {
+        auto var = (a > b) ? a : b;
+        return neg(var);
+    }
+    BDD_ID tV, high, low;
+    if (a < b) {
+        tV = a;
+        high = neg(b);
+        low = b;
+    } else {
+        tV = b;
+        high = neg(a);
+        low = a;
+    }
+    for (auto & node : uniqueTable)
+        if (node.topVar == tV and node.low == low and node.high == high)
+            return node.id;
+
+    std::string label = uniqueTable[a].label + " xor " + uniqueTable[b].label;
+    node newNode = {label, id_nxt, high, low, tV};
+    uniqueTable.push_back(newNode);
+    return id_nxt++;
+}
