@@ -74,4 +74,16 @@ TEST(MethodsTests, negTest) {
     EXPECT_EQ(manager.coFactorFalse(not_a), 1);
 }
 
+TEST(MethodsTests, xor2Test) {
+    ClassProject::Manager manager;
+    EXPECT_EQ(manager.xor2(0, 0), 0);
+    EXPECT_EQ(manager.xor2(1, 0), 1);
+    EXPECT_EQ(manager.xor2(1, 1), 0);
+    auto a = manager.createVar("a");
+    EXPECT_EQ(manager.xor2(0, a), a);
+    auto res = manager.xor2(1, a);
+    //EXPECT_EQ(manager.coFactorTrue(res), 0);
+    //EXPECT_EQ(manager.coFactorFalse(res), 1);
+}
+
 #endif //VDS_PROJECT_TESTS_H
