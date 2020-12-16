@@ -92,3 +92,18 @@ BDD_ID Manager::or2(const BDD_ID a, const BDD_ID b) {
     uniqueTable.push_back(newNode);
     return id_nxt++;
 }
+
+BDD_ID Manager::neg(const BDD_ID a) {
+    if (a == 1 or a == 0)
+        return not a;
+    auto tV = topVar(a);
+    auto low = coFactorFalse(a);
+    auto high = coFactorTrue(a);
+    for (auto & node : uniqueTable)
+        if (node.topVar == tV and node.low == high and node.high == low)
+            return node.id;
+
+    node newNode = {"not " + uniqueTable[a].label, id_nxt, low, high, tV};
+    uniqueTable.push_back(newNode);
+    return id_nxt++;
+}

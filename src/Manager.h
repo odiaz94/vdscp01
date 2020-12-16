@@ -51,9 +51,9 @@ namespace ClassProject {
 
         BDD_ID coFactorFalse(const BDD_ID f, BDD_ID x) override {};
 
-        BDD_ID coFactorTrue(const BDD_ID f) override {};
+        BDD_ID coFactorTrue(const BDD_ID f) override { return uniqueTable[f].high; };
 
-        BDD_ID coFactorFalse(const BDD_ID f) override {};
+        BDD_ID coFactorFalse(const BDD_ID f) override { return uniqueTable[f].low; };
 
         BDD_ID and2(const BDD_ID a, const BDD_ID b) override;
 
@@ -61,7 +61,7 @@ namespace ClassProject {
 
         BDD_ID xor2(const BDD_ID a, const BDD_ID b) override {};
 
-        BDD_ID neg(const BDD_ID a) override {};
+        BDD_ID neg(const BDD_ID a) override;
 
         BDD_ID nand2(const BDD_ID a, const BDD_ID b) override {};
 
