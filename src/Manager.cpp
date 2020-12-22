@@ -34,44 +34,23 @@ bool Manager::isConstant(const BDD_ID f) {
 bool Manager::isVariable(const BDD_ID x) {}
 
 BDD_ID Manager::and2(const BDD_ID a, const BDD_ID b)  {
-    if (!isConstant(a)) {
-        if (isConstant(b)) {
-            if (b == 1) {
-                return a;
-            } else {
-                return 0;
-            }
-        }
-        else {
-            BDD_ID topVar_ab;
-            BDD_ID high;
-            BDD_ID low=0;
-            if(topVar(a)<topVar(b)) {
-                topVar_ab = topVar(a);
-                high=b;
-            }
-            else {
-                topVar_ab = topVar(b);
-                high=a;
-            }
-            for(int i=0;i<uniqueTable.size();i++){
-                if(topVar_ab==uniqueTable[i].topVar && high==uniqueTable[i].high && low==uniqueTable[i].low){
-                    return uniqueTable[i].id;
-                }
-            }
-            node r = {"",id_nxt,high,low,topVar_ab};
-            uniqueTable.push_back(r);
-            return id_nxt++;
-        }
+    if (a == 0 or b == 0)
+        return 0;
+    if (a == 1)
+        return b;
+    if (b == 1)
+        return a;
+    auto tV = (a < b) ? a : b;
+    auto high = (a < b) ? b : a;
+    BDD_ID low = 0;
+    for (auto & node : uniqueTable) {
+        if (node.topVar == tV and node.low == low and node.high == high)
+            return node.id;
     }
-    else {
-        if (a == 1) {
-            return b;
-        }
-        else {
-            return 0;
-        }
-    }
+    std::string label = uniqueTable[a].label + " and " + uniqueTable[b].label;
+    node newNode = {label, id_nxt, high, low, tV};
+    uniqueTable.push_back(newNode);
+    return id_nxt++;
 }
 
 BDD_ID Manager::or2(const BDD_ID a, const BDD_ID b) {
@@ -88,7 +67,8 @@ BDD_ID Manager::or2(const BDD_ID a, const BDD_ID b) {
         if (node.topVar == tV and node.low == low and node.high == high)
             return node.id;
     }
-    node newNode = {"", id_nxt, high, low, tV};
+    std::string label = uniqueTable[a].label + " or " + uniqueTable[b].label;
+    node newNode = {label, id_nxt, high, low, tV};
     uniqueTable.push_back(newNode);
     return id_nxt++;
 }
