@@ -31,93 +31,27 @@ bool Manager::isConstant(const BDD_ID f) {
         return false;
 }
 
-bool Manager::isVariable(const BDD_ID x) {}
+bool Manager::isVariable(const BDD_ID x) {
+    if (x > 1)
+        if (topVar(x) == x)
+            return true;
+    return false;
+}
 
-BDD_ID Manager::and2(const BDD_ID a, const BDD_ID b)  {
-    /*if (a == 0 or b == 0)
-        return 0;
-    if (a == 1)
-        return b;
-    if (b == 1)
-        return a;
-    auto tV = (a < b) ? a : b;
-    auto high = (a < b) ? b : a;
-    BDD_ID low = 0;
-    for (auto & node : uniqueTable) {
-        if (node.topVar == tV and node.low == low and node.high == high)
-            return node.id;
-    }
-    std::string label = uniqueTable[a].label + " and " + uniqueTable[b].label;
-    node newNode = {label, id_nxt, high, low, tV};
-    uniqueTable.push_back(newNode);
-    return id_nxt++;*/
+BDD_ID Manager::and2(const BDD_ID a, const BDD_ID b) {
     return ite(a, b, 0);
 }
 
 BDD_ID Manager::or2(const BDD_ID a, const BDD_ID b) {
-    if (a == 1 or b == 1)
-        return 1;
-    if (a == 0)
-        return b;
-    if (b == 0)
-        return a;
-    auto tV = (a < b) ? a : b;
-    BDD_ID high = 1;
-    BDD_ID low = (a < b) ? b : a;
-    for (auto & node : uniqueTable) {
-        if (node.topVar == tV and node.low == low and node.high == high)
-            return node.id;
-    }
-    std::string label = uniqueTable[a].label + " or " + uniqueTable[b].label;
-    node newNode = {label, id_nxt, high, low, tV};
-    uniqueTable.push_back(newNode);
-    return id_nxt++;
+    return ite(a, 1, b);
 }
 
 BDD_ID Manager::neg(const BDD_ID a) {
-    if (a == 1 or a == 0)
-        return not a;
-    auto tV = topVar(a);
-    auto low = coFactorFalse(a);
-    auto high = coFactorTrue(a);
-    for (auto & node : uniqueTable)
-        if (node.topVar == tV and node.low == high and node.high == low)
-            return node.id;
-
-    node newNode = {"not " + uniqueTable[a].label, id_nxt, low, high, tV};
-    uniqueTable.push_back(newNode);
-    return id_nxt++;
+    return ite(a, 0, 1);
 }
 
 BDD_ID Manager::xor2(const BDD_ID a, const BDD_ID b) {
-    if (a == b)
-        return 0;
-    if (a == 0)
-        return b;
-    if (b == 0)
-        return a;
-    if (a == 1 xor b == 1) {
-        auto var = (a > b) ? a : b;
-        return neg(var);
-    }
-    BDD_ID tV, high, low;
-    if (a < b) {
-        tV = a;
-        high = neg(b);
-        low = b;
-    } else {
-        tV = b;
-        high = neg(a);
-        low = a;
-    }
-    for (auto & node : uniqueTable)
-        if (node.topVar == tV and node.low == low and node.high == high)
-            return node.id;
-
-    std::string label = uniqueTable[a].label + " xor " + uniqueTable[b].label;
-    node newNode = {label, id_nxt, high, low, tV};
-    uniqueTable.push_back(newNode);
-    return id_nxt++;
+    return ite(a, neg(b), b);
 }
 
 BDD_ID Manager::ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) {

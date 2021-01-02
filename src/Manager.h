@@ -73,7 +73,7 @@ namespace ClassProject {
 
         void findVars(const BDD_ID &root, std::set<BDD_ID> &vars_of_root) override {};
 
-        size_t uniqueTableSize() override {};
+        size_t uniqueTableSize() override { return uniqueTable.size(); };
 
     };
 
