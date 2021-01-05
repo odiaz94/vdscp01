@@ -42,6 +42,35 @@ BDD_ID Manager::and2(const BDD_ID a, const BDD_ID b) {
     return ite(a, b, 0);
 }
 
+BDD_ID Manager::nand2(const BDD_ID a, const BDD_ID b) {
+    if(!isConstant(a)){
+        if(isConstant(b)){
+            if(b == 0){return 1;}
+            else{return !a;}
+        }
+        else{
+            BDD_ID tV, high, low=0;
+            if(topVar(a)<topVar(b)) {
+                tV = topVar(a);
+                high=b;}
+            else {
+                tV = topVar(b);
+                high=a;}
+            for(int i=0;i<uniqueTable.size();i++){
+                if(tV==uniqueTable[i].topVar && high==uniqueTable[i].high && low==uniqueTable[i].low){
+                    return uniqueTable[i].id;}
+            }
+            node r = {"",id_nxt,high,low,tV};
+            uniqueTable.push_back(r);
+            return id_nxt++;
+        }
+    }
+    else{
+        if(a == 0){return 1;}
+        else{return !b;}
+    }
+}
+
 BDD_ID Manager::or2(const BDD_ID a, const BDD_ID b) {
     return ite(a, 1, b);
 }
