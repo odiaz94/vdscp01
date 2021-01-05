@@ -78,6 +78,39 @@ TEST(MethodsTests, nand2Test){
     EXPECT_EQ(manager.topVar(4), a);
     auto c = manager.createVar("c");
     EXPECT_EQ(manager.nand2(c,a),6);
+
+TEST(MethodsTests, negTest) {
+    ClassProject::Manager manager;
+    EXPECT_EQ(manager.neg(1), 0);
+    EXPECT_EQ(manager.neg(0), 1);
+    auto a = manager.createVar("a");
+    auto not_a = manager.neg(a);
+    EXPECT_EQ(manager.coFactorTrue(not_a), 0);
+    EXPECT_EQ(manager.coFactorFalse(not_a), 1);
+}
+
+TEST(MethodsTests, xor2Test) {
+    ClassProject::Manager manager;
+    EXPECT_EQ(manager.xor2(0, 0), 0);
+    EXPECT_EQ(manager.xor2(1, 0), 1);
+    EXPECT_EQ(manager.xor2(1, 1), 0);
+    auto a = manager.createVar("a");
+    EXPECT_EQ(manager.xor2(0, a), a);
+    auto res = manager.xor2(1, a);
+    //EXPECT_EQ(manager.coFactorTrue(res), 0);
+    //EXPECT_EQ(manager.coFactorFalse(res), 1);
+}
+
+TEST(MethodsTests, and2TestRecur) {
+    ClassProject::Manager manager;
+    auto a = manager.createVar("a");
+    auto b = manager.createVar("b");
+    auto c = manager.createVar("c");
+    auto a_and_b = manager.and2(a, b);
+    auto a_and_b_and_c = manager.and2(a_and_b, c);
+    EXPECT_EQ(a_and_b_and_c, 7);
+    EXPECT_EQ(manager.topVar(a_and_b_and_c), 2);
+    EXPECT_EQ(manager.coFactorTrue(a_and_b_and_c), 6);
 }
 
 #endif //VDS_PROJECT_TESTS_H

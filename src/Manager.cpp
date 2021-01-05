@@ -31,64 +31,83 @@ bool Manager::isConstant(const BDD_ID f) {
         return false;
 }
 
-bool Manager::isVariable(const BDD_ID x) {}
+bool Manager::isVariable(const BDD_ID x) {
+    if (x > 1)
+        if (topVar(x) == x)
+            return true;
+    return false;
+}
 
-BDD_ID Manager::and2(const BDD_ID a, const BDD_ID b)  {
-    if (!isConstant(a)) {
-        if (isConstant(b)) {
-            if (b == 1) {
-                return a;
-            } else {
-                return 0;
-            }
-        }
-        else {
-            BDD_ID topVar_ab;
-            BDD_ID high;
-            BDD_ID low=0;
-            if(topVar(a)<topVar(b)) {
-                topVar_ab = topVar(a);
-                high=b;
-            }
-            else {
-                topVar_ab = topVar(b);
-                high=a;
-            }
-            for(int i=0;i<uniqueTable.size();i++){
-                if(topVar_ab==uniqueTable[i].topVar && high==uniqueTable[i].high && low==uniqueTable[i].low){
-                    return uniqueTable[i].id;
-                }
-            }
-            node r = {"",id_nxt,high,low,topVar_ab};
-            uniqueTable.push_back(r);
-            return id_nxt++;
-        }
-    }
-    else {
-        if (a == 1) {
-            return b;
-        }
-        else {
-            return 0;
-        }
-    }
+BDD_ID Manager::and2(const BDD_ID a, const BDD_ID b) {
+    return ite(a, b, 0);
 }
 
 BDD_ID Manager::or2(const BDD_ID a, const BDD_ID b) {
-    if (a == 1 or b == 1)
-        return 1;
-    if (a == 0)
-        return b;
-    if (b == 0)
-        return a;
-    auto tV = (a < b) ? a : b;
-    BDD_ID high = 1;
-    BDD_ID low = (a < b) ? b : a;
-    for (auto & node : uniqueTable) {
-        if (node.topVar == tV and node.low == low and node.high == high)
-            return node.id;
+    return ite(a, 1, b);
+}
+
+BDD_ID Manager::neg(const BDD_ID a) {
+    return ite(a, 0, 1);
+}
+
+BDD_ID Manager::xor2(const BDD_ID a, const BDD_ID b) {
+    return ite(a, neg(b), b);
+}
+
+BDD_ID Manager::ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) {
+    if (i == 1)
+        return t;
+    if (i == 0)
+        return e;
+
+    auto tV = topVar(i);
+    if (t > 1) {
+        auto tV_t = topVar(t);
+        tV = (tV_t < tV) ? tV_t : tV;
     }
-    node newNode = {"", id_nxt, high, low, tV};
+    if (e > 1) {
+        auto tV_e = topVar(e);
+        tV = (tV_e < tV) ? tV_e : tV;
+    }
+
+    auto r_high = ite(coFactorTrue(i, tV), coFactorTrue(t, tV), coFactorTrue(e, tV));
+    auto r_low = ite(coFactorFalse(i, tV), coFactorFalse(t, tV), coFactorFalse(e, tV));
+    if (r_high == r_low)
+        return r_high;
+
+    for (auto & node : uniqueTable)
+        if (node.topVar == tV and node.low == r_low and node.high == r_high)
+            return node.id;
+
+    node newNode = {"", id_nxt, r_high, r_low, tV};
     uniqueTable.push_back(newNode);
     return id_nxt++;
+}
+
+BDD_ID Manager::coFactorTrue(const BDD_ID f, BDD_ID x) {
+    auto tV = topVar(f);
+    auto f_high = coFactorTrue(f);
+    if (f <= 1 or x <= 1 or tV > x)
+        return f;
+    if (tV == x)
+        return f_high;
+
+    auto f_low = coFactorFalse(f);
+    auto T = coFactorTrue(f_high, x);
+    auto F = coFactorTrue(f_low, x);
+    return ite(tV, T, F);
+}
+
+BDD_ID Manager::coFactorFalse(const BDD_ID f, BDD_ID x) {
+    auto tV = topVar(f);
+    auto f_low = coFactorFalse(f);
+    if (f <= 1 or x <= 1 or tV > x)
+        return f;
+    if (tV == x)
+        return f_low;
+
+    auto f_high = coFactorTrue(f);
+    auto T = coFactorFalse(f_high, x);
+    auto F = coFactorFalse(f_low, x);
+    return ite(tV, T, F);
 }
