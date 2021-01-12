@@ -142,5 +142,5 @@ BDD_ID Manager::coFactorFalse(const BDD_ID f, BDD_ID x) {
 }
 
 std::string Manager::getTopVarName(const BDD_ID &root) {
-    return std::string();
+    return uniqueTable[topVar(root)].label;
 }
