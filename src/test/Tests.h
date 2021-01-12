@@ -114,4 +114,15 @@ TEST(MethodsTests, and2TestRecur) {
     EXPECT_EQ(manager.coFactorTrue(a_and_b_and_c), 6);
 }
 
+TEST(MethodsTests, topVarTest) {
+    ClassProject::Manager manager;
+    auto a = manager.createVar("a");
+    auto a_top = manager.getTopVarName(a);
+    EXPECT_EQ(a_top, "a");
+    auto b = manager.createVar("b");
+    auto ab = manager.and2(a, b);
+    auto ab_top = manager.getTopVarName(ab);
+    EXPECT_EQ(ab_top, "a");
+}
+
 #endif //VDS_PROJECT_TESTS_H

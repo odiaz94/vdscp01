@@ -140,3 +140,7 @@ BDD_ID Manager::coFactorFalse(const BDD_ID f, BDD_ID x) {
     auto F = coFactorFalse(f_low, x);
     return ite(tV, T, F);
 }
+
+std::string Manager::getTopVarName(const BDD_ID &root) {
+    return std::string();
+}
