@@ -169,3 +169,22 @@ BDD_ID Manager::coFactorFalse(const BDD_ID f, BDD_ID x) {
     auto F = coFactorFalse(f_low, x);
     return ite(tV, T, F);
 }
+
+std::string Manager::getTopVarName(const BDD_ID &root) {
+    return uniqueTable[topVar(root)].label;
+}
+
+void Manager::findNodes(const BDD_ID &root, std::set<BDD_ID> &nodes_of_root) {
+    if (isConstant(root))
+        return;
+    nodes_of_root.insert(root);
+    findNodes(coFactorTrue(root), nodes_of_root);
+    findNodes(coFactorFalse(root), nodes_of_root);
+}
+
+void Manager::findVars(const BDD_ID &root, std::set<BDD_ID> &vars_of_root) {
+    std::set<BDD_ID> nodes;
+    findNodes(root, nodes);
+    for (auto & node : nodes)
+        vars_of_root.insert(topVar(node));
+}

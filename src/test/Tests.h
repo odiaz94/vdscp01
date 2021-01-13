@@ -129,4 +129,44 @@ TEST(MethodsTests, and2TestRecur) {
     EXPECT_EQ(manager.coFactorTrue(a_and_b_and_c), 6);
 }
 
+TEST(MethodsTests, topVarTest) {
+    ClassProject::Manager manager;
+    auto a = manager.createVar("a");
+    auto a_top = manager.getTopVarName(a);
+    EXPECT_EQ(a_top, "a");
+    auto b = manager.createVar("b");
+    auto ab = manager.and2(a, b);
+    auto ab_top = manager.getTopVarName(ab);
+    EXPECT_EQ(ab_top, "a");
+}
+
+TEST(MethodsTests, findNodesTest) {
+    ClassProject::Manager manager;
+    auto a = manager.createVar("a");
+    auto b = manager.createVar("b");
+    auto f = manager.or2(a, b);
+    std::set<ClassProject::BDD_ID> nodes;
+    manager.findNodes(f, nodes);
+    EXPECT_TRUE(nodes.find(f) != nodes.end());
+    EXPECT_TRUE(nodes.find(a) == nodes.end());
+    EXPECT_TRUE(nodes.find(b) != nodes.end());
+}
+
+TEST(MethodsTests, findVarsTest) {
+    ClassProject::Manager manager;
+    auto a = manager.createVar("a");
+    auto b = manager.createVar("b");
+    auto c = manager.createVar("c");
+    auto bc = manager.and2(b, c);
+    std::set<ClassProject::BDD_ID> vars;
+    manager.findVars(bc, vars);
+    EXPECT_TRUE(vars.find(b) != vars.end());
+    EXPECT_TRUE(vars.find(c) != vars.end());
+    EXPECT_TRUE(vars.find(a) == vars.end());
+    vars.clear();
+    auto abc = manager.and2(a, bc);
+    manager.findVars(abc, vars);
+    EXPECT_EQ(vars.size(), 3);
+}
+
 #endif //VDS_PROJECT_TESTS_H
