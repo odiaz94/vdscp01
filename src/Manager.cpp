@@ -56,9 +56,9 @@ BDD_ID Manager::nand2(const BDD_ID a, const BDD_ID b) {
             else {
                 tV = topVar(b);
                 high=a;}
-            for(int i=0;i<uniqueTable.size();i++){
-                if(tV==uniqueTable[i].topVar && high==uniqueTable[i].high && low==uniqueTable[i].low){
-                    return uniqueTable[i].id;}
+            for(auto & i : uniqueTable){
+                if(tV==i.topVar && high==i.high && low==i.low){
+                    return i.id;}
             }
             node r = {"",id_nxt,high,low,tV};
             uniqueTable.push_back(r);
@@ -70,6 +70,35 @@ BDD_ID Manager::nand2(const BDD_ID a, const BDD_ID b) {
         else{return !b;}
     }
 }
+
+/*BDD_ID Manager::nor2(const BDD_ID a, const BDD_ID b){
+    if(!isConstant(a)){
+        if(isConstant(b)){
+            if(b==1){return 0;}
+            else{return !a;}
+        }
+        else{
+            BDD_ID tV, high=0, low;
+            if(topVar(a)<topVar(b)) {
+                tV = topVar(a);
+                low=b;}
+            else {
+                tV = topVar(b);
+                low=a;}
+            for(auto & i : uniqueTable){
+                if(tV==i.topVar && high==i.high && low==i.low){
+                    return i.id;}
+            }
+            node r = {"",id_nxt,high,low,tV};
+            uniqueTable.push_back(r);
+            return id_nxt++;
+        }
+    }
+    else{
+        if(a==1){return 0;}
+        else{return !b;}
+    }
+}*/
 
 BDD_ID Manager::or2(const BDD_ID a, const BDD_ID b) {
     return ite(a, 1, b);
