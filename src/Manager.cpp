@@ -71,7 +71,7 @@ BDD_ID Manager::nand2(const BDD_ID a, const BDD_ID b) {
     }
 }
 
-/*BDD_ID Manager::nor2(const BDD_ID a, const BDD_ID b){
+BDD_ID Manager::nor2(const BDD_ID a, const BDD_ID b){
     if(!isConstant(a)){
         if(isConstant(b)){
             if(b==1){return 0;}
@@ -98,7 +98,7 @@ BDD_ID Manager::nand2(const BDD_ID a, const BDD_ID b) {
         if(a==1){return 0;}
         else{return !b;}
     }
-}*/
+}
 
 BDD_ID Manager::or2(const BDD_ID a, const BDD_ID b) {
     return ite(a, 1, b);
