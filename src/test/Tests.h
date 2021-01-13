@@ -71,13 +71,13 @@ TEST(MethodsTests, nand2Test) {
     EXPECT_EQ(manager.nand2(0, 1), 1);
     auto a = manager.createVar("a");
     EXPECT_EQ(manager.nand2(0, a), 1);
-    EXPECT_EQ(manager.nand2(a, 1), !a);
+    EXPECT_EQ(manager.nand2(a, 1), manager.neg(a));
     auto b = manager.createVar("b");
-    EXPECT_EQ(manager.nand2(a, b), 4);
-    EXPECT_EQ(manager.nand2(b, a), 4);
+    EXPECT_EQ(manager.nand2(a, b), 6);
+    EXPECT_EQ(manager.nand2(b, a), 6);
     //EXPECT_EQ(manager.topVar(4), a);
     auto c = manager.createVar("c");
-    EXPECT_EQ(manager.nand2(c, a), 6);
+    EXPECT_EQ(manager.nand2(c, a), 9);
 }
 
 TEST(MethodsTests, nor2Test) {
@@ -87,12 +87,12 @@ TEST(MethodsTests, nor2Test) {
     EXPECT_EQ(manager.nor2(1,1),0);
     auto a = manager.createVar("a");
     EXPECT_EQ(manager.nor2(1,a),0);
-    EXPECT_EQ(manager.nor2(a,0),!a);
+    EXPECT_EQ(manager.nor2(a,0),manager.neg(a));
     auto b = manager.createVar("b");
-    EXPECT_EQ(manager.nor2(a, b), 4);
-    EXPECT_EQ(manager.nor2(b, a), 4);
+    EXPECT_EQ(manager.nor2(a, b), 6);
+    EXPECT_EQ(manager.nor2(b, a), 6);
     auto c = manager.createVar("c");
-    EXPECT_EQ(manager.nand2(c, a), 6);
+    EXPECT_EQ(manager.nand2(c, a), 9);
 }
 
 TEST(MethodsTests, negTest) {
