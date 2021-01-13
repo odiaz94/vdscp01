@@ -75,9 +75,6 @@ TEST(MethodsTests, nand2Test) {
     auto b = manager.createVar("b");
     EXPECT_EQ(manager.nand2(a, b), 6);
     EXPECT_EQ(manager.nand2(b, a), 6);
-    //EXPECT_EQ(manager.topVar(4), a);
-    auto c = manager.createVar("c");
-    EXPECT_EQ(manager.nand2(c, a), 9);
 }
 
 TEST(MethodsTests, nor2Test) {
@@ -91,8 +88,6 @@ TEST(MethodsTests, nor2Test) {
     auto b = manager.createVar("b");
     EXPECT_EQ(manager.nor2(a, b), 6);
     EXPECT_EQ(manager.nor2(b, a), 6);
-    auto c = manager.createVar("c");
-    EXPECT_EQ(manager.nand2(c, a), 9);
 }
 
 TEST(MethodsTests, negTest) {
