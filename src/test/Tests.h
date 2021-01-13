@@ -91,8 +91,8 @@ TEST(MethodsTests, nor2Test) {
     auto b = manager.createVar("b");
     EXPECT_EQ(manager.nor2(a, b), 4);
     EXPECT_EQ(manager.nor2(b, a), 4);
-    auto c = manager.createVar("c");
-    EXPECT_EQ(manager.nand2(c, a), 6);
+    //auto c = manager.createVar("c");
+    //EXPECT_EQ(manager.nand2(c, a), 6);
 }
 
 TEST(MethodsTests, negTest) {
