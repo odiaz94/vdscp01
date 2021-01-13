@@ -75,7 +75,22 @@ TEST(MethodsTests, nand2Test) {
     auto b = manager.createVar("b");
     EXPECT_EQ(manager.nand2(a, b), 4);
     EXPECT_EQ(manager.nand2(b, a), 4);
-    EXPECT_EQ(manager.topVar(4), a);
+    //EXPECT_EQ(manager.topVar(4), a);
+    auto c = manager.createVar("c");
+    EXPECT_EQ(manager.nand2(c, a), 6);
+}
+
+TEST(MethodsTests, nor2Test) {
+    ClassProject::Manager manager;
+    EXPECT_EQ(manager.nor2(0,0),1);
+    EXPECT_EQ(manager.nor2(0,1),0);
+    EXPECT_EQ(manager.nor2(1,1),0);
+    auto a = manager.createVar("a");
+    EXPECT_EQ(manager.nor2(1,a),0);
+    EXPECT_EQ(manager.nor2(a,0),!a);
+    auto b = manager.createVar("b");
+    EXPECT_EQ(manager.nor2(a, b), 4);
+    EXPECT_EQ(manager.nor2(b, a), 4);
     auto c = manager.createVar("c");
     EXPECT_EQ(manager.nand2(c, a), 6);
 }
