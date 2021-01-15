@@ -11,8 +11,8 @@ bool ClassProject::operator==(const node &left, const node &right) {
 }
 
 Manager::Manager() {
-    struct node t = {"1", 1};
-    struct node f = {"0", 0};
+    struct node t = {"1", 1, 1, 1, 1};
+    struct node f = {"0", 0, 0, 0, 0};
     uniqueTable.push_back(f);
     uniqueTable.push_back(t);
     id_nxt = 2;
@@ -125,9 +125,9 @@ std::string Manager::getTopVarName(const BDD_ID &root) {
 }
 
 void Manager::findNodes(const BDD_ID &root, std::set<BDD_ID> &nodes_of_root) {
+    nodes_of_root.insert(root);
     if (isConstant(root))
         return;
-    nodes_of_root.insert(root);
     findNodes(coFactorTrue(root), nodes_of_root);
     findNodes(coFactorFalse(root), nodes_of_root);
 }
@@ -136,5 +136,6 @@ void Manager::findVars(const BDD_ID &root, std::set<BDD_ID> &vars_of_root) {
     std::set<BDD_ID> nodes;
     findNodes(root, nodes);
     for (auto & node : nodes)
-        vars_of_root.insert(topVar(node));
+        if (node > 1)
+            vars_of_root.insert(topVar(node));
 }
