@@ -38,8 +38,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Build and test
         run: |
-          cd /home/runner/work/vdscp01/vdscp01/build/
-          rm -r *
+          cd /home/runner/work/vdscp01/vdscp01/
+          mkdir build
+          cd build
           cmake ..
           make
           ./src/test/VDSProject_test
