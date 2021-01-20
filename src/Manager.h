@@ -182,8 +182,18 @@ namespace ClassProject {
          */
         std::string getTopVarName(const BDD_ID &root) override;
 
+        /**
+         * Method returns the set of nodes which are reachable from the node root (including itself)
+         * @param root - input node
+         * @param nodes_of_root  - output, group of nodes
+         */
         void findNodes(const BDD_ID &root, std::set<BDD_ID> &nodes_of_root) override;
 
+        /**
+         * Method returns the set of variables which are either top of the node root or the reachable nodes from root
+         * @param root - input node
+         * @param vars_of_root - output, group of top variable nodes
+         */
         void findVars(const BDD_ID &root, std::set<BDD_ID> &vars_of_root) override;
 
         /**

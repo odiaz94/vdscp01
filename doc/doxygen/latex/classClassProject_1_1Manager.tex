@@ -51,11 +51,9 @@ BDD\+\_\+\+ID \mbox{\hyperlink{classClassProject_1_1Manager_a3271fba879ca737e956
 \item 
 std\+::string \mbox{\hyperlink{classClassProject_1_1Manager_a7238da7832b931611dbfd273800360e2}{get\+Top\+Var\+Name}} (const BDD\+\_\+\+ID \&root) override
 \item 
-\mbox{\Hypertarget{classClassProject_1_1Manager_a9d465fdff670b0bd9ef4a35ab9611f25}\label{classClassProject_1_1Manager_a9d465fdff670b0bd9ef4a35ab9611f25}} 
-void {\bfseries find\+Nodes} (const BDD\+\_\+\+ID \&root, std\+::set$<$ BDD\+\_\+\+ID $>$ \&nodes\+\_\+of\+\_\+root) override
+void \mbox{\hyperlink{classClassProject_1_1Manager_a9d465fdff670b0bd9ef4a35ab9611f25}{find\+Nodes}} (const BDD\+\_\+\+ID \&root, std\+::set$<$ BDD\+\_\+\+ID $>$ \&nodes\+\_\+of\+\_\+root) override
 \item 
-\mbox{\Hypertarget{classClassProject_1_1Manager_a759513c0bb7447bfb05a82a818ab22eb}\label{classClassProject_1_1Manager_a759513c0bb7447bfb05a82a818ab22eb}} 
-void {\bfseries find\+Vars} (const BDD\+\_\+\+ID \&root, std\+::set$<$ BDD\+\_\+\+ID $>$ \&vars\+\_\+of\+\_\+root) override
+void \mbox{\hyperlink{classClassProject_1_1Manager_a759513c0bb7447bfb05a82a818ab22eb}{find\+Vars}} (const BDD\+\_\+\+ID \&root, std\+::set$<$ BDD\+\_\+\+ID $>$ \&vars\+\_\+of\+\_\+root) override
 \item 
 size\+\_\+t \mbox{\hyperlink{classClassProject_1_1Manager_a0724a85292854fe2179b92d6c1aaf2ed}{unique\+Table\+Size}} () override
 \end{DoxyCompactItemize}
@@ -202,6 +200,40 @@ Implements \mbox{\hyperlink{classClassProject_1_1ManagerInterface}{Class\+Projec
 Method False \begin{DoxyReturn}{Returns}
 id of the node representing the FALSE value 
 \end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classClassProject_1_1ManagerInterface}{Class\+Project\+::\+Manager\+Interface}}.
+
+\mbox{\Hypertarget{classClassProject_1_1Manager_a9d465fdff670b0bd9ef4a35ab9611f25}\label{classClassProject_1_1Manager_a9d465fdff670b0bd9ef4a35ab9611f25}} 
+\index{ClassProject::Manager@{ClassProject::Manager}!findNodes@{findNodes}}
+\index{findNodes@{findNodes}!ClassProject::Manager@{ClassProject::Manager}}
+\doxysubsubsection{\texorpdfstring{findNodes()}{findNodes()}}
+{\footnotesize\ttfamily void Manager\+::find\+Nodes (\begin{DoxyParamCaption}\item[{const BDD\+\_\+\+ID \&}]{root,  }\item[{std\+::set$<$ BDD\+\_\+\+ID $>$ \&}]{nodes\+\_\+of\+\_\+root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Method returns the set of nodes which are reachable from the node root (including itself) 
+\begin{DoxyParams}{Parameters}
+{\em root} & -\/ input node \\
+\hline
+{\em nodes\+\_\+of\+\_\+root} & -\/ output, group of nodes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classClassProject_1_1ManagerInterface}{Class\+Project\+::\+Manager\+Interface}}.
+
+\mbox{\Hypertarget{classClassProject_1_1Manager_a759513c0bb7447bfb05a82a818ab22eb}\label{classClassProject_1_1Manager_a759513c0bb7447bfb05a82a818ab22eb}} 
+\index{ClassProject::Manager@{ClassProject::Manager}!findVars@{findVars}}
+\index{findVars@{findVars}!ClassProject::Manager@{ClassProject::Manager}}
+\doxysubsubsection{\texorpdfstring{findVars()}{findVars()}}
+{\footnotesize\ttfamily void Manager\+::find\+Vars (\begin{DoxyParamCaption}\item[{const BDD\+\_\+\+ID \&}]{root,  }\item[{std\+::set$<$ BDD\+\_\+\+ID $>$ \&}]{vars\+\_\+of\+\_\+root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Method returns the set of variables which are either top of the node root or the reachable nodes from root 
+\begin{DoxyParams}{Parameters}
+{\em root} & -\/ input node \\
+\hline
+{\em vars\+\_\+of\+\_\+root} & -\/ output, group of top variable nodes \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{classClassProject_1_1ManagerInterface}{Class\+Project\+::\+Manager\+Interface}}.
