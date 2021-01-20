@@ -665,7 +665,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Method implements the if-then-else algorithm (recursive) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Method implements the if-then-else algorithm (recursive): if i is not a leaf node it iterates on itself until it finds a leaf node, after the roll back (by then it has a hierarchical structure) it checks the id of both legs of the i node for equal ids, if this happens the output is replaced with the id of one of the leg nodes, otherwise it checks the uniqueTable for equal nodes and replaces the output with the equal node found. If all these checks fail, it creates a new node with the collected data and returns the id of this node. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i</td><td>- decision node </td></tr>
     <tr><td class="paramname">t</td><td>- output node if i is TRUE </td></tr>
@@ -673,7 +673,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>id of the output node, if i is not a leaf node it iterates on itself until it finds a leaf node, after the roll back (by then it has a hierarchical structure) it checks the id of both legs of the i node for equal ids, if this happens the output is replaced with the id of one of the leg nodes, otherwise it checks the uniqueTable for equal nodes and replaces the output with the found node. If all these checks fail, it creates a new node with the collected data and returns the id of this node. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>id of the output node </dd></dl>
 
 <p>Implements <a class="el" href="classClassProject_1_1ManagerInterface.html">ClassProject::ManagerInterface</a>.</p>
 

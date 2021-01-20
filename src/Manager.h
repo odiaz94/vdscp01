@@ -81,16 +81,17 @@ namespace ClassProject {
         BDD_ID topVar(const BDD_ID f) override { return uniqueTable[f].topVar; };
 
         /**
-         * Method implements the if-then-else algorithm (recursive)
-         * @param i - decision node
-         * @param t - output node if i is TRUE
-         * @param e - output node if i is FALSE
-         * @return id of the output node, if i is not a leaf node it iterates on itself
+         * Method implements the if-then-else algorithm (recursive):
+         * if i is not a leaf node it iterates on itself
          * until it finds a leaf node, after the roll back (by then it has a hierarchical structure)
          * it checks the id of both legs of the i node for equal ids, if this happens the output is
          * replaced with the id of one of the leg nodes, otherwise it checks the uniqueTable for equal
-         * nodes and replaces the output with the found node. If all these checks fail, it creates a
+         * nodes and replaces the output with the equal node found. If all these checks fail, it creates a
          * new node with the collected data and returns the id of this node.
+         * @param i - decision node
+         * @param t - output node if i is TRUE
+         * @param e - output node if i is FALSE
+         * @return id of the output node
          */
         BDD_ID ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) override;
 

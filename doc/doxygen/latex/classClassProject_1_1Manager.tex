@@ -298,7 +298,7 @@ Implements \mbox{\hyperlink{classClassProject_1_1ManagerInterface}{Class\+Projec
 \doxysubsubsection{\texorpdfstring{ite()}{ite()}}
 {\footnotesize\ttfamily BDD\+\_\+\+ID Manager\+::ite (\begin{DoxyParamCaption}\item[{const BDD\+\_\+\+ID}]{i,  }\item[{const BDD\+\_\+\+ID}]{t,  }\item[{const BDD\+\_\+\+ID}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Method implements the if-\/then-\/else algorithm (recursive) 
+Method implements the if-\/then-\/else algorithm (recursive)\+: if i is not a leaf node it iterates on itself until it finds a leaf node, after the roll back (by then it has a hierarchical structure) it checks the id of both legs of the i node for equal ids, if this happens the output is replaced with the id of one of the leg nodes, otherwise it checks the unique\+Table for equal nodes and replaces the output with the equal node found. If all these checks fail, it creates a new node with the collected data and returns the id of this node. 
 \begin{DoxyParams}{Parameters}
 {\em i} & -\/ decision node \\
 \hline
@@ -308,7 +308,7 @@ Method implements the if-\/then-\/else algorithm (recursive)
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-id of the output node, if i is not a leaf node it iterates on itself until it finds a leaf node, after the roll back (by then it has a hierarchical structure) it checks the id of both legs of the i node for equal ids, if this happens the output is replaced with the id of one of the leg nodes, otherwise it checks the unique\+Table for equal nodes and replaces the output with the found node. If all these checks fail, it creates a new node with the collected data and returns the id of this node. 
+id of the output node 
 \end{DoxyReturn}
 
 
