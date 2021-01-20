@@ -1,0 +1,132 @@
+\hypertarget{classClassProject_1_1Manager}{}\doxysection{Class\+Project\+::Manager Class Reference}
+\label{classClassProject_1_1Manager}\index{ClassProject::Manager@{ClassProject::Manager}}
+
+
+{\ttfamily \#include $<$Manager.\+h$>$}
+
+Inheritance diagram for Class\+Project\+::Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classClassProject_1_1Manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClassProject_1_1Manager_a1658ff9f18e38ccd9cb8b0b371b9c20b}{Manager}} ()
+\item 
+BDD\+\_\+\+ID \mbox{\hyperlink{classClassProject_1_1Manager_aa3fe08b0b002032a13a5ff9d05f39cfd}{create\+Var}} (const std\+::string \&label) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_ac20a21d120de47176249d827700edbee}\label{classClassProject_1_1Manager_ac20a21d120de47176249d827700edbee}} 
+const BDD\+\_\+\+ID \& {\bfseries True} () override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a7ddc6d5cb81935795bb1356712ae3ede}\label{classClassProject_1_1Manager_a7ddc6d5cb81935795bb1356712ae3ede}} 
+const BDD\+\_\+\+ID \& {\bfseries False} () override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a13edef310f5e0ea718619151a7be451a}\label{classClassProject_1_1Manager_a13edef310f5e0ea718619151a7be451a}} 
+bool {\bfseries is\+Constant} (const BDD\+\_\+\+ID f) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a84c7144dc3c74e39dfb50a053da626a0}\label{classClassProject_1_1Manager_a84c7144dc3c74e39dfb50a053da626a0}} 
+bool {\bfseries is\+Variable} (const BDD\+\_\+\+ID x) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a2672f6b21579cfc0b2eb8f92e08b6b8f}\label{classClassProject_1_1Manager_a2672f6b21579cfc0b2eb8f92e08b6b8f}} 
+BDD\+\_\+\+ID {\bfseries top\+Var} (const BDD\+\_\+\+ID f) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a615943b56ed99f812d4117ebb5bbc455}\label{classClassProject_1_1Manager_a615943b56ed99f812d4117ebb5bbc455}} 
+BDD\+\_\+\+ID {\bfseries ite} (const BDD\+\_\+\+ID i, const BDD\+\_\+\+ID t, const BDD\+\_\+\+ID e) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_ae58b05ca4ddd764390db56a1e22e7b07}\label{classClassProject_1_1Manager_ae58b05ca4ddd764390db56a1e22e7b07}} 
+BDD\+\_\+\+ID {\bfseries co\+Factor\+True} (const BDD\+\_\+\+ID f, BDD\+\_\+\+ID x) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a91b0f680c53a9813e11f590f99c21264}\label{classClassProject_1_1Manager_a91b0f680c53a9813e11f590f99c21264}} 
+BDD\+\_\+\+ID {\bfseries co\+Factor\+False} (const BDD\+\_\+\+ID f, BDD\+\_\+\+ID x) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a95a79094e299b6d77ea5187e449e3243}\label{classClassProject_1_1Manager_a95a79094e299b6d77ea5187e449e3243}} 
+BDD\+\_\+\+ID {\bfseries co\+Factor\+True} (const BDD\+\_\+\+ID f) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_aafd54e8f58de45eb42492a4684f15355}\label{classClassProject_1_1Manager_aafd54e8f58de45eb42492a4684f15355}} 
+BDD\+\_\+\+ID {\bfseries co\+Factor\+False} (const BDD\+\_\+\+ID f) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a75bd703f518ab88006bb2b493569ba08}\label{classClassProject_1_1Manager_a75bd703f518ab88006bb2b493569ba08}} 
+BDD\+\_\+\+ID {\bfseries and2} (const BDD\+\_\+\+ID a, const BDD\+\_\+\+ID b) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a0b0f8f45f547343dd165357900f155d0}\label{classClassProject_1_1Manager_a0b0f8f45f547343dd165357900f155d0}} 
+BDD\+\_\+\+ID {\bfseries or2} (const BDD\+\_\+\+ID a, const BDD\+\_\+\+ID b) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a210d71defa6813536c7c4e4007bdd67e}\label{classClassProject_1_1Manager_a210d71defa6813536c7c4e4007bdd67e}} 
+BDD\+\_\+\+ID {\bfseries xor2} (const BDD\+\_\+\+ID a, const BDD\+\_\+\+ID b) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a6c83a83001023096dd68183f40ee80b3}\label{classClassProject_1_1Manager_a6c83a83001023096dd68183f40ee80b3}} 
+BDD\+\_\+\+ID {\bfseries neg} (const BDD\+\_\+\+ID a) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a94abdd8d633d6e52a052838305f97f36}\label{classClassProject_1_1Manager_a94abdd8d633d6e52a052838305f97f36}} 
+BDD\+\_\+\+ID {\bfseries nand2} (const BDD\+\_\+\+ID a, const BDD\+\_\+\+ID b) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a3271fba879ca737e9566c079629841c5}\label{classClassProject_1_1Manager_a3271fba879ca737e9566c079629841c5}} 
+BDD\+\_\+\+ID {\bfseries nor2} (const BDD\+\_\+\+ID a, const BDD\+\_\+\+ID b) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a7238da7832b931611dbfd273800360e2}\label{classClassProject_1_1Manager_a7238da7832b931611dbfd273800360e2}} 
+std\+::string {\bfseries get\+Top\+Var\+Name} (const BDD\+\_\+\+ID \&root) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a9d465fdff670b0bd9ef4a35ab9611f25}\label{classClassProject_1_1Manager_a9d465fdff670b0bd9ef4a35ab9611f25}} 
+void {\bfseries find\+Nodes} (const BDD\+\_\+\+ID \&root, std\+::set$<$ BDD\+\_\+\+ID $>$ \&nodes\+\_\+of\+\_\+root) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a759513c0bb7447bfb05a82a818ab22eb}\label{classClassProject_1_1Manager_a759513c0bb7447bfb05a82a818ab22eb}} 
+void {\bfseries find\+Vars} (const BDD\+\_\+\+ID \&root, std\+::set$<$ BDD\+\_\+\+ID $>$ \&vars\+\_\+of\+\_\+root) override
+\item 
+\mbox{\Hypertarget{classClassProject_1_1Manager_a0724a85292854fe2179b92d6c1aaf2ed}\label{classClassProject_1_1Manager_a0724a85292854fe2179b92d6c1aaf2ed}} 
+size\+\_\+t {\bfseries unique\+Table\+Size} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structClassProject_1_1node}{node}} $>$ \mbox{\hyperlink{classClassProject_1_1Manager_a6069808451ae0963a729e1c6868a2ff8}{unique\+Table}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClassProject_1_1Manager_a1658ff9f18e38ccd9cb8b0b371b9c20b}\label{classClassProject_1_1Manager_a1658ff9f18e38ccd9cb8b0b371b9c20b}} 
+\index{ClassProject::Manager@{ClassProject::Manager}!Manager@{Manager}}
+\index{Manager@{Manager}!ClassProject::Manager@{ClassProject::Manager}}
+\doxysubsubsection{\texorpdfstring{Manager()}{Manager()}}
+{\footnotesize\ttfamily Manager\+::\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+constructor of the class 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClassProject_1_1Manager_aa3fe08b0b002032a13a5ff9d05f39cfd}\label{classClassProject_1_1Manager_aa3fe08b0b002032a13a5ff9d05f39cfd}} 
+\index{ClassProject::Manager@{ClassProject::Manager}!createVar@{createVar}}
+\index{createVar@{createVar}!ClassProject::Manager@{ClassProject::Manager}}
+\doxysubsubsection{\texorpdfstring{createVar()}{createVar()}}
+{\footnotesize\ttfamily BDD\+\_\+\+ID Manager\+::create\+Var (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+method creating a new variable 
+\begin{DoxyParams}{Parameters}
+{\em label} & -\/ \char`\"{}name\char`\"{} of the variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id of a node representing the created variable 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classClassProject_1_1ManagerInterface}{Class\+Project\+::\+Manager\+Interface}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classClassProject_1_1Manager_a6069808451ae0963a729e1c6868a2ff8}\label{classClassProject_1_1Manager_a6069808451ae0963a729e1c6868a2ff8}} 
+\index{ClassProject::Manager@{ClassProject::Manager}!uniqueTable@{uniqueTable}}
+\index{uniqueTable@{uniqueTable}!ClassProject::Manager@{ClassProject::Manager}}
+\doxysubsubsection{\texorpdfstring{uniqueTable}{uniqueTable}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structClassProject_1_1node}{node}}$>$ Class\+Project\+::\+Manager\+::unique\+Table}
+
+unique table 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/sergey/\+Study/\+VDS/\+Class Project/vdscp01/src/Manager.\+h\item 
+/home/sergey/\+Study/\+VDS/\+Class Project/vdscp01/src/Manager.\+cpp\end{DoxyCompactItemize}

@@ -5,17 +5,16 @@
 #ifndef mwBDD_H
 #define mwBDD_H
 
-#include <cassert>
-#include <iostream>
-#include <list>
 #include <vector>
-#include <unordered_map>
-#include <set>
-#include <string>
 #include "ManagerInterface.h"
 
+/**
+ * Namespace containing everything ralated to the BDD library
+ */
 namespace ClassProject {
-
+    /**
+     * A datatype representing a BDD node
+     */
     struct node {
         std::string label;
         BDD_ID id, high, low, topVar;
@@ -23,16 +22,29 @@ namespace ClassProject {
 
     bool operator==(const node& left, const node& right);
 
-    class Manager: ManagerInterface {
-
+    /**
+     * A class containing methods for building ROBDDs and performing operations on them
+     */
+    class Manager: public ManagerInterface {
     private:
         BDD_ID id_nxt;
 
     public:
+        /**
+         * A unique table containing nodes being computed
+         */
         std::vector<node> uniqueTable;
 
+        /**
+         * Constructor of the class initializates the instance with two nodes representing terminal cases
+         */
         Manager();
 
+        /**
+         * Method creating a new variable
+         * @param label - "name" of the variable
+         * @return id of a node representing the created variable
+         */
         BDD_ID createVar(const std::string &label) override;
 
         const BDD_ID &True() override { return uniqueTable[1].id; };

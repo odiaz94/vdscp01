@@ -1,0 +1,20 @@
+\label{index_md__home_sergey_Study_VDS_Class_Project_vdscp01_README}%
+\Hypertarget{index_md__home_sergey_Study_VDS_Class_Project_vdscp01_README}%
+ \hypertarget{index_autotoc_md1}{}\doxysubsection{Group01 -\/ VDS Course project -\/ TUK}\label{index_autotoc_md1}
+\hypertarget{index_autotoc_md2}{}\doxyparagraph{Usage guide\+:}\label{index_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item Include {\ttfamily \mbox{\hyperlink{Manager_8h_source}{Manager.\+h}}} into your source code;
+\item For more convenience it can be mentioned that you are {\ttfamily using namespace \mbox{\hyperlink{namespaceClassProject}{Class\+Project}};};
+\item First of all create an instance of the {\ttfamily Manager} class that will hold the ROBDD you are building;
+\item Then create variables contained in your boolean formula using {\ttfamily create\+Var} method (the first created variable will have the lowest id), {\bfseries{important}}\+: creating of variables is not allowed after performing any operations;
+\item Use created variables in your boolean formula using methods performing boolean operations on BDD nodes\+:
+
+{\ttfamily and2} {\ttfamily or2} {\ttfamily xor2} {\ttfamily nand2} {\ttfamily nor2} {\ttfamily neg};
+\item After operations being performed the created instance contains {\ttfamily unique\+Table} representing the ROBDD;
+\item For analysis of the built ROBDD the following methods can be used\+:
+
+{\ttfamily get\+Top\+Var\+Name} {\ttfamily find\+Nodes} {\ttfamily find\+Vars} {\ttfamily co\+Factor\+True} {\ttfamily co\+Factor\+False};
+\end{DoxyEnumerate}
+
+An example of library usage can be found in \{project\+\_\+dir\+\_\+name\}/src/main.cpp 

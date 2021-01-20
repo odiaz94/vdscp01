@@ -1,0 +1,36 @@
+Parser for the ISCAS85/89/99 bench file format. It parsers the bench files aiming at generating an abstract syntax graph (ASG). The nodes of the ASG are topologically sorted in order to make the calls for the BDD package.\hypertarget{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md4}{}\doxysection{Installation}\label{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md4}
+\hypertarget{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md5}{}\doxysubsection{Step 1\+: Clone the directory}\label{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md5}
+Run the git clone command replacing $\ast$$<$username$>$$\ast$ by you username. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://<username>@bitbucket.org/cpnogueira/bench\_parser.git}
+
+\end{DoxyCode}
+\hypertarget{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md6}{}\doxysubsection{Step 2\+: Compiling}\label{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md6}
+To compile it, after cloning it from bitbucket, you should be in the root folder of the project and run the command\+: ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+
+
+To clean files produced during compilation (object files, executables, libraries, ...) type\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make clean}
+
+\end{DoxyCode}
+\hypertarget{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md7}{}\doxysection{Running the executable}\label{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md7}
+The different designs for the bechmarks are located in the directory \char`\"{}benchmarks\char`\"{} For example, to run the code for the circuit s420.\+bench of the iscas89 benchmark type\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./bench\_parser benchmarks/iscas89/s420.bench}
+
+\end{DoxyCode}
+
+
+This will produce the subfolder results\+\_\+s420 containing the results.\hypertarget{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md8}{}\doxysection{API Reference}\label{md__home_sergey_Study_VDS_Class_Project_vdscp01_src_bench_README_autotoc_md8}
+To generate or update the documentation, you should navigate to the doc/ directory and then\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{../bench\_parser/doc/\$ doxygen doxyConfigEx}
+
+\end{DoxyCode}
+ The documentation will be available on $\ast$../bench\+\_\+parser/doc/doxygen/$\ast$ and you can access it from the same location opening the file {\itshape index.\+html}. 

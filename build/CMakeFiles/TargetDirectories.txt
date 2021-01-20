@@ -1,9 +1,0 @@
-/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles/rebuild_cache.dir
-/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles/edit_cache.dir
-/home/sergey/Study/VDS/Class Project/vdscp01/build/CMakeFiles/VDSProject.dir
-/home/sergey/Study/VDS/Class Project/vdscp01/build/src/CMakeFiles/rebuild_cache.dir
-/home/sergey/Study/VDS/Class Project/vdscp01/build/src/CMakeFiles/edit_cache.dir
-/home/sergey/Study/VDS/Class Project/vdscp01/build/src/CMakeFiles/Manager.dir
-/home/sergey/Study/VDS/Class Project/vdscp01/build/src/test/CMakeFiles/rebuild_cache.dir
-/home/sergey/Study/VDS/Class Project/vdscp01/build/src/test/CMakeFiles/edit_cache.dir
-/home/sergey/Study/VDS/Class Project/vdscp01/build/src/test/CMakeFiles/VDSProject_test.dir
