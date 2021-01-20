@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hash_3c_20boost_3a_3auuids_3a_3auuid_20_3e_17',['hash&lt; boost::uuids::uuid &gt;',['../structstd_1_1hash_3_01boost_1_1uuids_1_1uuid_01_4.html',1,'std']]]
+  ['manager_10',['Manager',['../classClassProject_1_1Manager.html',1,'ClassProject::Manager'],['../classClassProject_1_1Manager.html#a1658ff9f18e38ccd9cb8b0b371b9c20b',1,'ClassProject::Manager::Manager()']]],
+  ['managerinterface_11',['ManagerInterface',['../classClassProject_1_1ManagerInterface.html',1,'ClassProject']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['classproject_0',['ClassProject',['../namespaceClassProject.html',1,'']]],
-  ['createvar_1',['createVar',['../classClassProject_1_1Manager.html#aa3fe08b0b002032a13a5ff9d05f39cfd',1,'ClassProject::Manager']]]
+  ['and2_0',['and2',['../classClassProject_1_1Manager.html#a75bd703f518ab88006bb2b493569ba08',1,'ClassProject::Manager']]]
 ];

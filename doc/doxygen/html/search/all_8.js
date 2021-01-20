@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['manager_25',['Manager',['../classClassProject_1_1Manager.html',1,'ClassProject::Manager'],['../classClassProject_1_1Manager.html#a1658ff9f18e38ccd9cb8b0b371b9c20b',1,'ClassProject::Manager::Manager()']]],
-  ['managerinterface_26',['ManagerInterface',['../classClassProject_1_1ManagerInterface.html',1,'ClassProject']]]
+  ['topvar_17',['topVar',['../classClassProject_1_1Manager.html#a2672f6b21579cfc0b2eb8f92e08b6b8f',1,'ClassProject::Manager']]],
+  ['true_18',['True',['../classClassProject_1_1Manager.html#ac20a21d120de47176249d827700edbee',1,'ClassProject::Manager']]]
 ];

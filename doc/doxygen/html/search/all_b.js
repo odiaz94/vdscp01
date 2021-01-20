@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['skip_5fgrammar_30',['skip_grammar',['../structskip__p_1_1skip__grammar.html',1,'skip_p']]],
-  ['syntaxexception_31',['SyntaxException',['../classSyntaxException.html',1,'']]]
+  ['xor2_22',['xor2',['../classClassProject_1_1Manager.html#a210d71defa6813536c7c4e4007bdd67e',1,'ClassProject::Manager']]]
 ];
