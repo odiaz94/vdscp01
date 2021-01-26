@@ -7,21 +7,12 @@
 
 #include <vector>
 #include "ManagerInterface.h"
+#include "HashTable.h"
 
 /**
  * Namespace containing everything related to the BDD library
  */
 namespace ClassProject {
-    /**
-     * A datatype representing a BDD node
-     */
-    struct node {
-        std::string label;
-        BDD_ID id, high, low, topVar;
-    };
-
-    bool operator==(const node& left, const node& right);
-
     /**
      * A class containing methods for building ROBDDs and performing operations on them
      */
@@ -33,7 +24,7 @@ namespace ClassProject {
         /**
          * Unique table containing nodes being computed
          */
-        std::vector<node> uniqueTable;
+        HashTable uniqueTable;
 
         /**
          * Constructor of the class initializes the instance with two nodes representing terminal cases
@@ -51,13 +42,13 @@ namespace ClassProject {
          * Method True
          * @return id of the node representing the TRUE value
          */
-        const BDD_ID &True() override { return uniqueTable[1].id; };
+        const BDD_ID &True() override { return uniqueTable[1]->id; };
 
         /**
          * Method False
          * @return id of the node representing the FALSE value
          */
-        const BDD_ID &False() override { return uniqueTable[0].id; };
+        const BDD_ID &False() override { return uniqueTable[0]->id; };
 
         /**
          * Method verifies if the given node is a terminal node
@@ -78,7 +69,7 @@ namespace ClassProject {
          * @param f - any node
          * @return id of the top variable of f
          */
-        BDD_ID topVar(const BDD_ID f) override { return uniqueTable[f].topVar; };
+        BDD_ID topVar(const BDD_ID f) override { return uniqueTable[f]->topVar; };
 
         /**
          * Method implements the if-then-else algorithm (recursive):
@@ -119,7 +110,7 @@ namespace ClassProject {
          * @param f - input node
          * @return id of the high cofactor node
          */
-        BDD_ID coFactorTrue(const BDD_ID f) override { return uniqueTable[f].high; };
+        BDD_ID coFactorTrue(const BDD_ID f) override { return uniqueTable[f]->high; };
 
         /**
        * Method extracts the low cofactor of the input node
@@ -127,7 +118,7 @@ namespace ClassProject {
        * @param f - input node
        * @return id of the low cofactor node
        */
-        BDD_ID coFactorFalse(const BDD_ID f) override { return uniqueTable[f].low; };
+        BDD_ID coFactorFalse(const BDD_ID f) override { return uniqueTable[f]->low; };
 
         /**
          * Method performs an AND operation between two nodes
@@ -201,7 +192,7 @@ namespace ClassProject {
          * Method calculates the size of the uniqueTable
          * @return the current number of nodes in the uniqueTable
          */
-        size_t uniqueTableSize() override { return uniqueTable.size(); };
+        size_t uniqueTableSize() override { return id_nxt; };
 
     };
 

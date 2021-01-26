@@ -1,5 +1,3 @@
-#include <cassert>
-
 #include "Manager.h"
 
 using namespace ClassProject;
@@ -13,14 +11,14 @@ bool ClassProject::operator==(const node &left, const node &right) {
 Manager::Manager() {
     struct node t = {"1", 1, 1, 1, 1};
     struct node f = {"0", 0, 0, 0, 0};
-    uniqueTable.push_back(f);
-    uniqueTable.push_back(t);
+    uniqueTable.add(f);
+    uniqueTable.add(t);
     id_nxt = 2;
 }
 
 BDD_ID Manager::createVar(const std::string &label) {
     struct node newVar = {label, id_nxt, 1, 0, id_nxt};
-    uniqueTable.push_back(newVar);
+    uniqueTable.add(newVar);
     return id_nxt++;
 }
 
@@ -83,12 +81,10 @@ BDD_ID Manager::ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) {
     if (r_high == r_low)
         return r_high;
 
-    for (auto & node : uniqueTable)
-        if (node.topVar == tV and node.low == r_low and node.high == r_high)
-            return node.id;
-
     node newNode = {"", id_nxt, r_high, r_low, tV};
-    uniqueTable.push_back(newNode);
+    if (uniqueTable.find(newNode))
+        return newNode.id;
+    uniqueTable.add(newNode);
     return id_nxt++;
 }
 
@@ -121,7 +117,7 @@ BDD_ID Manager::coFactorFalse(const BDD_ID f, BDD_ID x) {
 }
 
 std::string Manager::getTopVarName(const BDD_ID &root) {
-    return uniqueTable[topVar(root)].label;
+    return uniqueTable[topVar(root)]->label;
 }
 
 void Manager::findNodes(const BDD_ID &root, std::set<BDD_ID> &nodes_of_root) {
