@@ -6,7 +6,6 @@
 #define mwBDD_H
 
 #include <vector>
-#include "ManagerInterface.h"
 #include "HashTable.h"
 
 /**
@@ -24,7 +23,7 @@ namespace ClassProject {
         /**
          * Unique table containing nodes being computed
          */
-        HashTable uniqueTable;
+        HashTable uniqueTable, computedTable;
 
         /**
          * Constructor of the class initializes the instance with two nodes representing terminal cases
@@ -42,13 +41,13 @@ namespace ClassProject {
          * Method True
          * @return id of the node representing the TRUE value
          */
-        const BDD_ID &True() override { return uniqueTable[1]->id; };
+        const BDD_ID &True() override { return uniqueTable[1].id; };
 
         /**
          * Method False
          * @return id of the node representing the FALSE value
          */
-        const BDD_ID &False() override { return uniqueTable[0]->id; };
+        const BDD_ID &False() override { return uniqueTable[0].id; };
 
         /**
          * Method verifies if the given node is a terminal node
@@ -69,7 +68,7 @@ namespace ClassProject {
          * @param f - any node
          * @return id of the top variable of f
          */
-        BDD_ID topVar(const BDD_ID f) override { return uniqueTable[f]->topVar; };
+        BDD_ID topVar(const BDD_ID f) override { return uniqueTable[f].topVar; };
 
         /**
          * Method implements the if-then-else algorithm (recursive):
@@ -110,7 +109,7 @@ namespace ClassProject {
          * @param f - input node
          * @return id of the high cofactor node
          */
-        BDD_ID coFactorTrue(const BDD_ID f) override { return uniqueTable[f]->high; };
+        BDD_ID coFactorTrue(const BDD_ID f) override { return uniqueTable[f].high; };
 
         /**
        * Method extracts the low cofactor of the input node
@@ -118,7 +117,7 @@ namespace ClassProject {
        * @param f - input node
        * @return id of the low cofactor node
        */
-        BDD_ID coFactorFalse(const BDD_ID f) override { return uniqueTable[f]->low; };
+        BDD_ID coFactorFalse(const BDD_ID f) override { return uniqueTable[f].low; };
 
         /**
          * Method performs an AND operation between two nodes

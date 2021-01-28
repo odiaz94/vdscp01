@@ -2,12 +2,6 @@
 
 using namespace ClassProject;
 
-bool ClassProject::operator==(const node &left, const node &right) {
-    return (left.label == right.label) and (left.id == right.id) and
-           (left.high == right.high) and (left.low == right.low) and
-           (left.topVar == right.topVar);
-}
-
 Manager::Manager() {
     struct node t = {"1", 1, 1, 1, 1};
     struct node f = {"0", 0, 0, 0, 0};
@@ -65,6 +59,9 @@ BDD_ID Manager::ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) {
         return t;
     if (i == 0)
         return e;
+    node node_to_find = {"", 0, i, t, e};
+    if (computedTable.find(node_to_find))
+        return node_to_find.id;
 
     auto tV = topVar(i);
     if (t > 1) {
@@ -81,10 +78,13 @@ BDD_ID Manager::ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) {
     if (r_high == r_low)
         return r_high;
 
-    node newNode = {"", id_nxt, r_high, r_low, tV};
-    if (uniqueTable.find(newNode))
-        return newNode.id;
-    uniqueTable.add(newNode);
+    node_to_find = {"", id_nxt, r_high, r_low, tV};
+    auto found = uniqueTable.find(node_to_find);
+    computedTable.add({"", node_to_find.id, i, t, e});
+    if (found)
+        return node_to_find.id;
+
+    uniqueTable.add(node_to_find);
     return id_nxt++;
 }
 
@@ -117,7 +117,7 @@ BDD_ID Manager::coFactorFalse(const BDD_ID f, BDD_ID x) {
 }
 
 std::string Manager::getTopVarName(const BDD_ID &root) {
-    return uniqueTable[topVar(root)]->label;
+    return uniqueTable[topVar(root)].label;
 }
 
 void Manager::findNodes(const BDD_ID &root, std::set<BDD_ID> &nodes_of_root) {

@@ -7,6 +7,7 @@
 
 #include "ManagerInterface.h"
 #include <vector>
+#include <unordered_set>
 
 namespace ClassProject {
     /**
@@ -16,32 +17,36 @@ namespace ClassProject {
         std::string label;
         BDD_ID id, high, low, topVar;
     };
+}
 
+namespace std
+{
+    template<> struct hash<ClassProject::node>
+    {
+        size_t operator()(ClassProject::node const& n) const noexcept
+        {
+            size_t h1 = std::hash<size_t>{}(n.topVar);
+            size_t h2 = std::hash<size_t>{}(n.high);
+            size_t h3 = std::hash<size_t>{}(n.low);
+            return ((h1 ^ (h2 << 1)) << 1) ^ h3;
+        }
+    };
+}
+
+namespace ClassProject {
     bool operator==(const node& left, const node& right);
 
     class HashTable {
     private:
-        node** arr;
-        const size_t default_size = 10;
-        size_t size;
-        size_t buffer_size;
-        const double rehash_size = 0.75;
-        std::vector<node*> nodes_ptr;
+        std::unordered_set<node> table_hash;
+        std::vector<node> table;
 
     public:
-        HashTable();
-
-        const node* operator[] (size_t i) {
-            return nodes_ptr[i];
-        }
-
-        size_t hashFunc(BDD_ID tv, BDD_ID rh, BDD_ID rl) const;
-
         bool find(node& n);
 
         void add(const node& n);
 
-        void resize();
+        const node& operator[](BDD_ID i);
     };
 }
 

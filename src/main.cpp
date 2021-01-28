@@ -28,7 +28,7 @@ int main()
         std::cout << var << " ";
     std::cout << "\n" << "id\t" << "h\t" << "l\t" << "tv\t" << "label" << "\n";
     for (size_t i = 0; i < manager.uniqueTableSize(); i++)
-        std::cout << manager.uniqueTable[i]->id << "\t" << manager.uniqueTable[i]->high
-                << "\t" << manager.uniqueTable[i]->low << "\t" << manager.uniqueTable[i]->topVar
-                << "\t" << manager.uniqueTable[i]->label << "\n";
+        std::cout << manager.uniqueTable[i].id << "\t" << manager.uniqueTable[i].high
+                << "\t" << manager.uniqueTable[i].low << "\t" << manager.uniqueTable[i].topVar
+                << "\t" << manager.uniqueTable[i].label << "\n";
 }
