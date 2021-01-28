@@ -6,22 +6,12 @@
 #define mwBDD_H
 
 #include <vector>
-#include "ManagerInterface.h"
+#include "HashTable.h"
 
 /**
  * Namespace containing everything related to the BDD library
  */
 namespace ClassProject {
-    /**
-     * A datatype representing a BDD node
-     */
-    struct node {
-        std::string label;
-        BDD_ID id, high, low, topVar;
-    };
-
-    bool operator==(const node& left, const node& right);
-
     /**
      * A class containing methods for building ROBDDs and performing operations on them
      */
@@ -33,7 +23,7 @@ namespace ClassProject {
         /**
          * Unique table containing nodes being computed
          */
-        std::vector<node> uniqueTable;
+        HashTable uniqueTable, computedTable;
 
         /**
          * Constructor of the class initializes the instance with two nodes representing terminal cases
@@ -201,7 +191,7 @@ namespace ClassProject {
          * Method calculates the size of the uniqueTable
          * @return the current number of nodes in the uniqueTable
          */
-        size_t uniqueTableSize() override { return uniqueTable.size(); };
+        size_t uniqueTableSize() override { return id_nxt; };
 
     };
 

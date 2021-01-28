@@ -1,26 +1,18 @@
-#include <cassert>
-
 #include "Manager.h"
 
 using namespace ClassProject;
 
-bool ClassProject::operator==(const node &left, const node &right) {
-    return (left.label == right.label) and (left.id == right.id) and
-           (left.high == right.high) and (left.low == right.low) and
-           (left.topVar == right.topVar);
-}
-
 Manager::Manager() {
     struct node t = {"1", 1, 1, 1, 1};
     struct node f = {"0", 0, 0, 0, 0};
-    uniqueTable.push_back(f);
-    uniqueTable.push_back(t);
+    uniqueTable.add(f);
+    uniqueTable.add(t);
     id_nxt = 2;
 }
 
 BDD_ID Manager::createVar(const std::string &label) {
     struct node newVar = {label, id_nxt, 1, 0, id_nxt};
-    uniqueTable.push_back(newVar);
+    uniqueTable.add(newVar);
     return id_nxt++;
 }
 
@@ -67,6 +59,9 @@ BDD_ID Manager::ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) {
         return t;
     if (i == 0)
         return e;
+    node node_to_find = {"", 0, i, t, e};
+    if (computedTable.find(node_to_find))
+        return node_to_find.id;
 
     auto tV = topVar(i);
     if (t > 1) {
@@ -83,12 +78,13 @@ BDD_ID Manager::ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) {
     if (r_high == r_low)
         return r_high;
 
-    for (auto & node : uniqueTable)
-        if (node.topVar == tV and node.low == r_low and node.high == r_high)
-            return node.id;
+    node_to_find = {"", id_nxt, r_high, r_low, tV};
+    auto found = uniqueTable.find(node_to_find);
+    computedTable.add({"", node_to_find.id, i, t, e});
+    if (found)
+        return node_to_find.id;
 
-    node newNode = {"", id_nxt, r_high, r_low, tV};
-    uniqueTable.push_back(newNode);
+    uniqueTable.add(node_to_find);
     return id_nxt++;
 }
 

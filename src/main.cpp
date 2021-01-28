@@ -10,7 +10,7 @@
 using namespace ClassProject;
 
 
-int main(int argc, char* argv[])
+int main()
 {
     Manager manager;
     auto a = manager.createVar("a");
@@ -27,7 +27,8 @@ int main(int argc, char* argv[])
     for (auto & var : vars)
         std::cout << var << " ";
     std::cout << "\n" << "id\t" << "h\t" << "l\t" << "tv\t" << "label" << "\n";
-    for (auto & node : manager.uniqueTable)
-        std::cout << node.id << "\t" << node.high << "\t" << node.low << "\t"
-                << node.topVar << "\t" << node.label << "\n";
+    for (size_t i = 0; i < manager.uniqueTableSize(); i++)
+        std::cout << manager.uniqueTable[i].id << "\t" << manager.uniqueTable[i].high
+                << "\t" << manager.uniqueTable[i].low << "\t" << manager.uniqueTable[i].topVar
+                << "\t" << manager.uniqueTable[i].label << "\n";
 }
