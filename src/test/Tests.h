@@ -40,7 +40,7 @@ TEST(MethodsTests, and2Test) {
     ClassProject::Manager manager;
     EXPECT_EQ(manager.and2(0,1),0);
     EXPECT_EQ(manager.and2(1,1),1);
-    EXPECT_EQ(manager.and2(1,0),0);
+    EXPECT_EQ(manager.and2(1,0),0); //all truth table?
     auto a=manager.createVar("a");
     EXPECT_EQ(manager.and2(a,1),a);
     EXPECT_EQ(manager.and2(a,0),0);
@@ -119,9 +119,10 @@ TEST(MethodsTests, and2TestRecur) {
     auto c = manager.createVar("c");
     auto a_and_b = manager.and2(a, b);
     auto a_and_b_and_c = manager.and2(a_and_b, c);
+    // b_and_c =
     EXPECT_EQ(a_and_b_and_c, 7);
     EXPECT_EQ(manager.topVar(a_and_b_and_c), 2);
-    EXPECT_EQ(manager.coFactorTrue(a_and_b_and_c), 6);
+    EXPECT_EQ(manager.coFactorTrue(a_and_b_and_c), 6); // b_and_c
 }
 
 TEST(MethodsTests, topVarTest) {
