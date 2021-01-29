@@ -63,7 +63,7 @@ BDD_ID Manager::ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) {
     if (computedTable.find(node_to_find))
         return node_to_find.id;
 
-    auto tV = topVar(i);
+    auto tV = topVar(i); //
     if (t > 1) {
         auto tV_t = topVar(t);
         tV = (tV_t < tV) ? tV_t : tV;
