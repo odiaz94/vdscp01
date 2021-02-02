@@ -55,43 +55,26 @@ BDD_ID Manager::xor2(const BDD_ID a, const BDD_ID b) {
 }
 
 BDD_ID Manager::ite(const BDD_ID i, const BDD_ID t, const BDD_ID e) {
-    BDD_ID i_, t_, e_;
-    i_ = i;
-    t_ = t;
-    e_ = e;
-    if (i == t) t_ = 1;
-    if (i == e) e_ = 0;
-//    if (i == neg(e)) e_ = 1;
-//    if (i == neg(t)) t_ = 0;
-    if (i_ == 1)
-        return t;
-    if (i_ == 0)
-        return e;
-    if (t_ == e_)
-        return t;
-    // t == e ? + other terminal cases
-    node node_to_find = {"", 0, i_, t_, e_};
+    if (i == 1) return t;
+    if (i == 0) return e;
+    if (t == e) return t;
+    if (i == t) return ite(i, 1, e);
+    if (i == e) return ite(i, t, 0);
+
+    node node_to_find = {"", 0, i, t, e};
     if (computedTable.find(node_to_find))
         return node_to_find.id;
 
-    auto tV = topVar(i_); //
-    if (t_ > 1) { // min(topVars)
-        auto tV_t = topVar(t_);
-        if (tV_t < tV) tV = tV_t;
-    }
-    if (e_ > 1) {
-        auto tV_e = topVar(e_);
-        if (tV_e < tV) tV = tV_e;
-    }
+    auto tV = topVar3(topVar(i), topVar(t), topVar(e));
 
-    auto r_high = ite(coFactorTrue(i_, tV), coFactorTrue(t_, tV), coFactorTrue(e_, tV));
-    auto r_low = ite(coFactorFalse(i_, tV), coFactorFalse(t_, tV), coFactorFalse(e_, tV));
+    auto r_high = ite(coFactorTrue(i, tV), coFactorTrue(t, tV), coFactorTrue(e, tV));
+    auto r_low = ite(coFactorFalse(i, tV), coFactorFalse(t, tV), coFactorFalse(e, tV));
     if (r_high == r_low)
         return r_high;
 
     node_to_find = {"", id_nxt, r_high, r_low, tV};
     auto found = uniqueTable.find(node_to_find);
-    computedTable.add({"", node_to_find.id, i_, t_, e_});
+    computedTable.add({"", node_to_find.id, i, t, e});
     if (found)
         return node_to_find.id;
 
@@ -145,4 +128,16 @@ void Manager::findVars(const BDD_ID &root, std::set<BDD_ID> &vars_of_root) {
     for (auto & node : nodes)
         if (node > 1)
             vars_of_root.insert(topVar(node));
+}
+
+BDD_ID Manager::topVar3(BDD_ID f, BDD_ID g, BDD_ID h) {
+    auto g_isVar = isVariable(g);
+    auto h_isVar = isVariable(h);
+    if (isVariable(f) and (f < g or !g_isVar) and (f < h or !h_isVar))
+        return f;
+    else if (g_isVar and (g < h or !h_isVar))
+        return g;
+    else if (h_isVar)
+        return h;
+    return 0;
 }

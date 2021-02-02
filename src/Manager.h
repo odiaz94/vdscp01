@@ -70,6 +70,8 @@ namespace ClassProject {
          */
         BDD_ID topVar(const BDD_ID f) override { return uniqueTable[f].topVar; };
 
+        BDD_ID topVar3(BDD_ID f, BDD_ID g, BDD_ID h);
+
         /**
          * Method implements the if-then-else algorithm (recursive):
          * if i is not a leaf node it iterates on itself
