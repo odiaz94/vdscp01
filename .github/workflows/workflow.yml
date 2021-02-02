@@ -35,8 +35,7 @@ jobs:
           make
           sudo make install
 
-      # Runs a set of commands using the runners shell
-      - name: Build and test
+      - name: Build
         run: |
           cd /home/runner/work/vdscp01/vdscp01/
           mkdir build
@@ -44,3 +43,11 @@ jobs:
           cmake ..
           make
           ./src/test/VDSProject_test
+
+      - name: Test
+        run: |
+          ./src/test/VDSProject_test
+
+      - name: Test_reachable
+        run: |
+          ./src/reachable/VDSProject_reachable
