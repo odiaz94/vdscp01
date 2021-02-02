@@ -45,10 +45,10 @@ jobs:
 
       - name: Test
         run: |
-          cd /home/runner/work/vdscp01/vdscp01/
+          cd /home/runner/work/vdscp01/vdscp01/build/
           ./src/test/VDSProject_test
 
       - name: Test_reachable
         run: |
-          cd /home/runner/work/vdscp01/vdscp01/
+          cd /home/runner/work/vdscp01/vdscp01/build/
           ./src/reachable/VDSProject_reachable
