@@ -12,6 +12,14 @@
 namespace ClassProject {
 
     class Reachable : public ReachableInterface {
+    private:
+        unsigned int stateSize;
+        std::vector<BDD_ID> state_bits;
+        std::vector<BDD_ID> next_state_bits;
+        std::vector<BDD_ID> delta;
+        BDD_ID c_init;
+        BDD_ID reachable_set;
+
     public:
         explicit Reachable(unsigned int stateSize);
 

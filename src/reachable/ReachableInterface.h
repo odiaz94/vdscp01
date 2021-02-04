@@ -42,7 +42,7 @@ namespace ClassProject{
         /**
          * Each state machine has an initial state. The initial state is provided as a vector.
          * The vector has to have an entry for each state bit. If the entry is "true" the state bit is high,
-         * otherwise negated. E.g. initial state not(s0) and not(s1) is transformed into {false,false}.
+         * otherwise low. E.g. initial state not(s0) and not(s1) is transformed into {false,false}.
          * @param stateVector provide the assignment for each state bit
          */
         virtual void setInitState(const std::vector<bool>& stateVector)  = 0;

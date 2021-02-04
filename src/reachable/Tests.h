@@ -34,6 +34,31 @@ TEST(managerTest, HowTo_Example) {
 
 }
 
+TEST(managerTest, Another_Example) {
+    ClassProject::Reachable comp(3);
 
+    auto states = comp.getStates();
+    auto s0 = states.at(0);
+    auto s1 = states.at(1);
+    auto s2 = states.at(2);
+
+    std::vector<BDD_ID> functions;
+    functions.push_back(comp.and2(s1, s2));
+    functions.push_back(comp.or2(s0, s2));
+    functions.push_back(comp.neg(s1));
+
+    comp.setDelta(functions);
+
+    comp.setInitState({false, false, false});
+
+    ASSERT_TRUE(comp.is_reachable({false, false, false}));
+    ASSERT_TRUE(comp.is_reachable({false, false, true}));
+    ASSERT_TRUE(comp.is_reachable({false, true, false}));
+    ASSERT_TRUE(comp.is_reachable({false, true, true}));
+    ASSERT_FALSE(comp.is_reachable({true, false, false}));
+    ASSERT_FALSE(comp.is_reachable({true, false, true}));
+    ASSERT_TRUE(comp.is_reachable({true, true, false}));
+    ASSERT_FALSE(comp.is_reachable({true, true, true}));
+}
 
 #endif //VDSPROJECT_TESTS_H
